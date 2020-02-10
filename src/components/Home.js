@@ -1,70 +1,48 @@
 import React from 'react'
 import FadeIn from 'react-fade-in'
 import styled from 'styled-components'
-import profile from '../imgs/profile.jpg'
+import profile from '../imgs/transprofile.png'
 import Typical from 'react-typical'
+import logo from '../imgs/smallerlogo.png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faGithub, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
+import { dom } from '@fortawesome/fontawesome-svg-core'
+dom.watch()
+
+library.add(faGithub, faLinkedinIn, faEnvelope, faTwitter)
+
+
+
 
 export default function Home() {
     return (
         <Container>
             <FadeIn transitionDuration={1000}>
-                <Name>Alexander Sierra</Name>
-                <Subtitle>
+                <FlexDiv>
+                    <ImgDiv>
+                        <Img src={logo}/>
+                    </ImgDiv>
+                    <TitleDiv>
+                        <Name>Alexander C Sierra</Name>
+                        <Subtitle>
+                        <Typical steps={['Front End Web Developer', 2000, '3D Modeler', 1500, 'Experienced in React', 2000, 'Experienced in Redux', 2000, 'Front End Web Developer', 1500]}
+                            loop={1}
+                            wrapper="b"/>
+                        </Subtitle>
+                        <Button>Let's talk</Button>
+                        <IconDiv>
+                            <Link href="mailto:alexandercsierra@gmail.com" target="_blank"><Icon className="fas fa-envelope"></Icon></Link>
+                            <Link href="https://www.linkedin.com/in/alexander-sierra-b7519673/" target="_blank"><Icon className="fab fa-linkedin-in"></Icon></Link>
+                            <Link href="https://github.com/alexandercsierra" target="_blank"><Icon className="fab fa-github"></Icon></Link>
+                            <Link href="https://github.com/alexandercsierra" target="_blank"><Icon className="fab fa-twitter"></Icon></Link>
 
-                <Typical steps={['Front End Web Developer', 2000, '3D Modeler', 1500, 'Experienced in React', 2000, 'Experienced in Redux', 2000, 'Front End Web Developer', 1500]}
-                    loop={1}
-                    wrapper="b"/>
-
-                </Subtitle>
-                {/* <Button>Let's Talk</Button> */}
-            </FadeIn>
-            {/* <h3><Typical steps={['developer', 1000, '3D modeler', 1000, 'trumpet player', 1000, 'gamer', 1000, 'cat dad', 1000]}
-                    loop={Infinity}
-                    wrapper="b"/>
-            </h3> */}
-            {/* <AboutDiv>
-                <ImgDiv>
-                    <Img src={profile}/>
-                </ImgDiv>
-                <AboutText>
-                    <h3>About Me</h3>
-                    <ParaDiv>
-                        <p>I come from a pre-med background (holding a B.S. in Health Sciences), currently working hard to transition into web development. Above all else, I love learning new things, and there is certainly no shortage of that in the development world. My learning is currently taking place at Lambda School, where I am also employed as a Team Lead.</p><br/>
-                        <p>I find it so satisfying to have a problem, research the solution, then be able to immediately apply my new knowledge to fix a problem I couldn't solve 5 minutes ago. When not developing, I can be found playing trumpet in my community band, or frolicking in the snow.</p>
-                    </ParaDiv>
-                    
-                </AboutText>
-            </AboutDiv> */}
-            {/* <AboutDiv>
-                <AboutText>
-                    <h3>About Me</h3>
-                </AboutText>
+                        </IconDiv>
+                    </TitleDiv>        
+                </FlexDiv>
                 
-            
-                <CardDiv>
-                    <Card>
-                        <h3>Pre-Med</h3>
-                        <p>I hold a B.S. in Health Sciences from UCF</p>
-                    </Card>
-                    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                        <h2>>></h2>
-                    </div>
-                    
-                    <Card>
-                        <h3>Lambda School</h3>
-                        <p>I started learning web development in earnest in 2019 and haven't stopped developing since</p>
-                    </Card>
-                    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                        <h2>>></h2>
-                    </div>
-                    <Card>
-                        <h3>Web Developer</h3>
-                        <p></p>
-                    </Card>
-                </CardDiv>
-            </AboutDiv> */}
-            
-            
+            </FadeIn>
         </Container>
     )
 }
@@ -72,87 +50,92 @@ export default function Home() {
 
 const Container = styled.div`
     // width: 80%;
-    margin: 0 auto;
+    margin: 4% auto;
+    @media (max-width: 1200px){
+        margin: 18% auto;
+    }
+`;
+
+const TitleDiv = styled.div`
+    width: 60%;
+    padding-left: 1%;
     // border: 1px solid red;
+    @media (max-width: 600px){
+        width: 100%;
+        margin-top: 8%;
+    }
+`;
+
+const FlexDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // border: 1px solid red;
+    @media (max-width: 600px){
+        flex-direction: column;
+    }
+`;
+let Icon = styled.svg`
+    font-size: 3rem;
+    color: #f1f1f1;
+    // width: 20%;
+    // border: 1px solid red;
+`;
+
+let Link = styled.a`
+    margin: 0 4%;
 `;
 
 const Name = styled.h1`
     font-size: 4rem;
-    margin-top: 5%;
-    margin-bottom: 2%;
-    @media(max-width: 600px){
-        font-size: 3rem;
+    // border: 1px solid red;
+    @media(max-width: 990px){
+        font-size: 2.25rem;
     }
+    @media(max-width: 400px){
+        font-size: 2rem;
+    }
+
 `;
 
 const Subtitle = styled.h2`
     font-size: 2rem;
-    margin-bottom: 10%;
+    margin-bottom: 3%;
     background: linear-gradient(to right, #30A4CE 0%, #713BDA 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    @media(max-width: 990px){
+        font-size: 1.8rem;
+    }
     @media(max-width: 600px){
         font-size: 1.5rem;
     }
 `;
 
-const AboutDiv = styled.div`
-    margin-top: 10%;
-    justify-content: center;
+const IconDiv = styled.div`
     // border: 1px solid red;
-    // padding: 4%;
+    width: 50%;
+    margin: 4% auto;
     display: flex;
-    flex-direction: column;
-    
-
+    justify-content: center;
 `;
 
+
 const ImgDiv = styled.div`
-    width: 40%;
+    width: 25%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     // border: 1px solid red;
+    @media (max-width: 600px){
+        width: 40%;
+    }
 `;
 
 const Img = styled.img`
     width: 100%;
-    padding: 4%;
 `;
 
-const AboutText = styled.div`
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    // border: 1px solid red;
-    margin: 4% auto;
-`;
-
-const ParaDiv = styled.div`
-    padding: 3%;
-`;
-
-const Card = styled.div`
-    color: #F1F1F1;
-    display: flex;
-    flex-direction: column;
-    // justify-content: space-around;
-    background: #21254f;
-    width: 25%;
-    padding: 2%;
-    height: 300px;
-    // box-shadow: rgba(0, 0, 0, 0.3) 0.3em 0.3em 1em;
-`;
-
-const CardDiv = styled.div`
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 10%;
-    background: #21254f;
-    width: 100%;
-`;
 
 const Button = styled.button`
     background: #21254f;
@@ -162,7 +145,8 @@ const Button = styled.button`
     color: #f1f1f1;
     font-size: 1rem;
     cursor: pointer;
-    width: 8%;
+    width: 20%;
+    margin-top: 3%;
     
     &:hover {
         background: #1C1C1C;
