@@ -1,5 +1,6 @@
 import React from 'react'
 import FadeIn from 'react-fade-in'
+import Footer from './Footer'
 import styled from 'styled-components'
 import profile from '../imgs/transprofile.png'
 import Typical from 'react-typical'
@@ -31,7 +32,7 @@ export default function Home() {
                             loop={1}
                             wrapper="b"/>
                         </Subtitle>
-                        <Button>Let's talk</Button>
+                        {/* <Button>Let's talk</Button> */}
                         <IconDiv>
                             <Link href="mailto:alexandercsierra@gmail.com" target="_blank"><Icon className="fas fa-envelope"></Icon></Link>
                             <Link href="https://www.linkedin.com/in/alexander-sierra-b7519673/" target="_blank"><Icon className="fab fa-linkedin-in"></Icon></Link>
@@ -43,6 +44,7 @@ export default function Home() {
                 </FlexDiv>
                 
             </FadeIn>
+            <Footer footerClass={'stickyFooter'}/>
         </Container>
     )
 }
@@ -50,9 +52,16 @@ export default function Home() {
 
 const Container = styled.div`
     // width: 80%;
-    margin: 4% auto;
-    @media (max-width: 1200px){
-        margin: 18% auto;
+    height: 100vh;
+    // border: 1px solid red;
+    margin: 100px auto;
+
+    justify-content: center;
+    @media (max-width: 1400px){
+        margin: 200px auto;
+    }
+    @media(max-width: 990px){
+        margin: 100px auto;
     }
 `;
 
@@ -60,7 +69,7 @@ const TitleDiv = styled.div`
     width: 60%;
     padding-left: 1%;
     // border: 1px solid red;
-    @media (max-width: 600px){
+    @media (max-width: 990px){
         width: 100%;
         margin-top: 8%;
     }
@@ -71,15 +80,21 @@ const FlexDiv = styled.div`
     justify-content: center;
     align-items: center;
     // border: 1px solid red;
-    @media (max-width: 600px){
+    @media (max-width: 990px){
         flex-direction: column;
     }
 `;
 let Icon = styled.svg`
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #f1f1f1;
     // width: 20%;
     // border: 1px solid red;
+    @media (max-width: 990px){
+        font-size: 2rem;
+    }
+    @media (max-width: 500px){
+        font-size: 1.8rem;
+    }
 `;
 
 let Link = styled.a`
@@ -127,8 +142,14 @@ const ImgDiv = styled.div`
     justify-content: center;
     align-items: flex-end;
     // border: 1px solid red;
-    @media (max-width: 600px){
-        width: 40%;
+    @media (max-width: 990px){
+        width: 30%;
+    }
+    @media (max-width: 700px){
+        width: 35%;
+    }
+    @media (max-width: 500px){
+        width: 50%;
     }
 `;
 

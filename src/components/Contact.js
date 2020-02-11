@@ -1,17 +1,19 @@
 import React, {useState} from 'react'
 import ReactCardFlip from 'react-card-flip';
+import Footer from './Footer'
 import Form from './Form'
 import styled from 'styled-components'
 import logo from '../imgs/smallerlogo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
+import {faEnvelope, faArrowRight} from '@fortawesome/free-solid-svg-icons'
 import { dom } from '@fortawesome/fontawesome-svg-core'
 dom.watch()
 
 
-library.add(faGithubSquare, faLinkedin, faEnvelope)
+
+library.add(faGithubSquare, faLinkedin, faEnvelope, faArrowRight)
 
 export default function Contact() {
     const [isFlipped, setIsFlipped] = useState(false)
@@ -22,28 +24,43 @@ export default function Contact() {
     }
 
     return (
+        <div>
         <Container>
             <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
-                <CardFront onClick={handleClick}>
-                    <Img src={logo}/>
-                    <TextDiv>
-                        <h1>Alexander C Sierra</h1>
-                        <p>Front End Web Developer</p>
-                        <div>
-                            <ul style={{color: 'white', textAlign: 'left', marginTop: '15%'}}>
-                                <li>HTML/CSS/JavaScript</li>
-                                <li>React/Redux</li>
-                            </ul>
-                        </div>
-                    </TextDiv>
+                <CardFront>
+                    <FrontContainer>
+                        <ImgDiv>
+                            <Img src={logo}/>
+                        </ImgDiv>
+                        
+                        <TextDiv>
+                            <h1>Alexander C Sierra</h1>
+                            <p>Front End Web Developer</p>
+                            <div>
+                                <ul style={{color: 'white', textAlign: 'left', marginTop: '15%'}}>
+                                    <li>JavaScript</li>
+                                    <li>React/Redux</li>
+                                </ul>
+                                
+                            </div>
+                        </TextDiv>
+                    </FrontContainer>
+                    <FlipDiv>
+                    <a onClick={handleClick}><Icon  className="fas fa-arrow-right"></Icon></a>
+                    </FlipDiv>
                 </CardFront>
          
                 <CardBack>
                   <Form/>
+                  <p onClick={handleClick}>Click to flip >></p>
                 </CardBack>
               </ReactCardFlip>
               {/* <Form/> */}
+              
         </Container>
+        <Footer footerClass={'footer'}/>
+        </div>
+
     )
 }
 
@@ -54,11 +71,55 @@ const Container = styled.div`
     align-items: center;
 `;
 
+const FrontContainer = styled.div`
+    // border: 1px solid green;
+    display: flex;
+    width: 100%;
+    height: 90%;
+`;
+
+let Icon = styled.svg`
+    font-size: 3rem;
+    color: #f1f1f1;
+    // width: 20%;
+    // border: 1px solid red;
+`;
+
+
+const FlipDiv = styled.div`
+    // border: 1px solid yellow;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+`;
+
+const Button = styled.button`
+    margin: 1%;
+    border: none;
+    background: none;
+    color: #f1f1f1;
+    border: 
+    padding: 1%;
+    font-size: 1.2rem;
+`;
+
+const ImgDiv = styled.div`
+    width: 50%;
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+`;
+
 const Img = styled.img`
-    margin-left: 4%;
-    @media(max-width: 1160px){
-        width: 40%;
-    }
+    border: 1px solid green;
+    // margin-left: 4%;
+    // @media(max-width: 1160px){
+    //     width: 40%;
+    // }
 `;
 
 const TextDiv = styled.div`
@@ -66,8 +127,8 @@ const TextDiv = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // border: 1px solid red;
-    width: 100%;
+    border: 1px solid red;
+    width: 50%;
 `;
 
 
@@ -78,6 +139,7 @@ const CardFront = styled.div`
     width: 350px;
     height: 233px;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     @media(min-width: 530px){
@@ -111,7 +173,7 @@ const CardFront = styled.div`
 
 const CardBack = styled.div`
     box-shadow: #000000 0.3em 0.3em 1em;
-    background: #010101;
+    background: #f1f1f1;
     width: 350px;
     height: 233px;
     display: flex;

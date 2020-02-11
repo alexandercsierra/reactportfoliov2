@@ -1,20 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function Footer() {
+export default function Footer(props) {
     return (
-        <Container>
+        <div className={props.footerClass}>
             	<p> © Copyright Alexander Sierra 2020</p>
-        </Container>
+        </div>
     )
 }
-
-const Container = styled.div`
-    // background: #3f3f3f;
-    background: #2b2b2b;
-    // position: fixed;
-    // left: 0;
-    // bottom: 0;
-    width: 100%;
-    padding: 2%;
-`;

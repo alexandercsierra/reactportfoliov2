@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './Footer'
 import styled from 'styled-components'
 
 export default function Projects() {
@@ -12,6 +13,7 @@ export default function Projects() {
                     <p>Here is a description of my project</p>
                 </Project>
             </div>
+            <Footer footerClass={'footer'}/>
         </div>
     )
 }
