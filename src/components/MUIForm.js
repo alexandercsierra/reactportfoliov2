@@ -86,13 +86,36 @@ export default function FormPropsTextFields() {
 
 
 const Container = styled.div`
-  margin: 15% auto;
+  margin: 10% auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   // border: 1px solid red;
   width: 60%;
+
+  @media(max-width:1400px){
+    width: 50%;
+  }
+
+  @media(max-width:1160px){
+
+  }
+
+  @media(max-width:1020px){
+    margin-top: 2%;
+  }
+  @media(max-width:740px){
+    width: 90%;
+    margin-top: 15%;
+  }
+  @media(max-width:570px){
+
+  }
+  @media(max-width:400px){
+    margin-top: 2%;
+  }
+
 `;
 
 

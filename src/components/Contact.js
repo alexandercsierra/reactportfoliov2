@@ -35,13 +35,13 @@ export default function Contact() {
                         </ImgDiv>
                         
                         <TextDiv>
-                            <h1>Alexander C Sierra</h1>
-                            <p>Front End Web Developer</p>
+                            <Name>Alexander C Sierra</Name>
+                            <Title>Front End Web Developer</Title>
                             <div>
-                                <ul style={{color: 'white', textAlign: 'left', marginTop: '15%'}}>
+                                <List style={{color: 'white', textAlign: 'left', marginTop: '15%'}}>
                                     <li>JavaScript</li>
                                     <li>React/Redux</li>
-                                </ul>
+                                </List>
                                 
                             </div>
                         </TextDiv>
@@ -67,11 +67,24 @@ export default function Contact() {
               {/* <Form/> */}
               
         </Container>
-        <Footer footerClass={'footer'}/>
+        <Footer footerClass={'stickyFooter'}/>
         </div>
 
     )
 }
+
+const Name = styled.h1`
+    @media(max-width:570px){
+        font-size: 1.8rem;
+    }
+`;
+const Title = styled.p`
+`;
+const List = styled.ul`
+    @media(max-width:570px){
+        font-size: .9rem;
+    }
+`;
 
 const A = styled.a`
     // border: 1px solid red;
@@ -85,6 +98,27 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media(max-width:1400px){
+        margin-top: 8%;
+    }
+
+    @media(max-width:1160px){
+        margin-top: 12%;
+    }
+
+    @media(max-width:1020px){
+        margin-top: 20%;
+    }
+    @media(max-width:740px){
+        margin-top: 4%;
+    }
+    @media(max-width:570px){
+        margin-top: 25%;
+    }
+    @media(max-width:400px){
+        margin-top: 50%;
+    }
 `;
 
 const FrontContainer = styled.div`
@@ -92,6 +126,9 @@ const FrontContainer = styled.div`
     display: flex;
     width: 100%;
     height: 90%;
+    @media(max-width: 740px){
+        flex-direction: column;
+    }
 `;
 
 let Icon = styled.svg`
@@ -127,15 +164,21 @@ const ImgDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media(max-width: 740px){
+        width: 100%;
+    }
+    
 
 `;
 
 const Img = styled.img`
-    // border: 1px solid green;
-    // margin-left: 4%;
-    // @media(max-width: 1160px){
-    //     width: 40%;
-    // }
+    @media(max-width: 1020px){
+        width: 75%;
+    }
+    @media(max-width: 740px){
+        width: 55%;
+        margin-top: 4%;
+    }
 `;
 
 const TextDiv = styled.div`
@@ -145,6 +188,11 @@ const TextDiv = styled.div`
     align-items: center;
     // border: 1px solid red;
     width: 50%;
+    @media(max-width: 740px){
+        width: 100%;
+        margin-top: 8%;
+    }
+    
 `;
 
 const BackDiv = styled.div`
@@ -160,75 +208,91 @@ const CardFront = styled.div`
     // border: 1px solid red;
     box-shadow: #000000 0.3em 0.3em 1em;
     background: #010101;
-    width: 350px;
-    height: 233px;
+    width: 1200px;
+    height: 650px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    @media(min-width: 530px){
+
+    @media(max-width:1400px){
+        width: 923px;
+        height: 500px;
+    }
+
+    @media(max-width:1160px){
+        width: 923px;
+        height: 500px;
+    }
+
+    @media(max-width:1020px){
+        width: 738px;
+        height: 400px;
+    }
+    @media(max-width:740px){
         width: 500px;
-        height: 333px;
+        height: 750px;
     }
-    @media(min-width: 750px){
-        width: 700px;
-        height: 466px;
-    }
-    @media(min-width:1160px){
-        width: 1000px;
-        height: 666px;
-    }
-    @media(min-width:1450px){
-        width: 1200px;
-        height: 800px;
-    }
-    // @media(min-width:1600px){
-    //     width: 1400px;
-    //     height: 787px;
-    // }
-    @media only screen 
-    and (min-device-width: 640px) 
-    and (-webkit-min-device-pixel-ratio: 2)
-    and (orientation: landscape) {
+    @media(max-width:570px){
         width: 350px;
-        height: 233px;
-  }
+        height: 525px;
+    }
+    @media(max-width:400px){
+        width: 290px;
+        height: 435px;
+    }
+    
+
+//     @media only screen 
+//     and (min-device-width: 640px) 
+//     and (-webkit-min-device-pixel-ratio: 2)
+//     and (orientation: landscape) {
+//         width: 350px;
+//         height: 233px;
+//   }
 `;
 
 const CardBack = styled.div`
     box-shadow: #000000 0.3em 0.3em 1em;
     background: #010101;
-    width: 350px;
-    height: 233px;
+    width: 1200px;
+    height: 650px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @media(min-width: 530px){
+
+    @media(max-width:1400px){
+        width: 923px;
+        height: 500px;
+    }
+
+    @media(max-width:1160px){
+        width: 923px;
+        height: 500px;
+    }
+
+    @media(max-width:1020px){
+        width: 738px;
+        height: 400px;
+    }
+    @media(max-width:740px){
         width: 500px;
-        height: 333px;
+        height: 750px;
     }
-    @media(min-width: 750px){
-        width: 700px;
-        height: 466px;
-    }
-    @media(min-width:1160px){
-        width: 1000px;
-        height: 666px;
-    }
-    @media(min-width:1450px){
-        width: 1200px;
-        height: 800px;
-    }
-    // @media(min-width:1600px){
-    //     width: 1400px;
-    //     height: 787px;
-    // }
-    @media only screen 
-    and (min-device-width: 640px) 
-    and (-webkit-min-device-pixel-ratio: 2)
-    and (orientation: landscape) {
+    @media(max-width:570px){
         width: 350px;
-        height: 233px;
+        height: 525px;
+    }
+    @media(max-width:400px){
+        width: 290px;
+        height: 435px;
+    }
+    // @media only screen 
+    // and (min-device-width: 640px) 
+    // and (-webkit-min-device-pixel-ratio: 2)
+    // and (orientation: landscape) {
+    //     width: 350px;
+    //     height: 233px;
   }
 `;
