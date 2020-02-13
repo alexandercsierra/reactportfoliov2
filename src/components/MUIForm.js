@@ -1,15 +1,21 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, StylesProvider } from '@material-ui/core/styles';
+import styled from 'styled-components'
+
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon'
+
+
 
 const useStyles = makeStyles(theme => ({
   root: {
     textField: {
-        color: 'white'
+        
     },
     '& .MuiTextField-root': {
       margin: theme.spacing(1),
-      width: 200,
+      width: 200
     },
   },
 }));
@@ -20,16 +26,18 @@ export default function FormPropsTextFields() {
 //   const {newclass} = props;
 
   return (
-    <form className={classes.root} noValidate autoComplete="off">
+    <StylesProvider injectFirst>
+    <form className={classes.root} noValidate autoComplete="off" style={{width: '100%'}}>
       
       
-      <div>
+      <Container>
         <TextField
           required
           id="outlined-required"
           label="Name"
           defaultValue="Name"
           variant="outlined"
+          style={{width:'100%'}}
           InputProps={{
             className: classes.outlined
           }}
@@ -40,22 +48,51 @@ export default function FormPropsTextFields() {
           label="Email"
           defaultValue="Email"
           variant="outlined"
+          style={{width:'100%'}}
           InputProps={{
             className: classes.outlined
           }}
         />
         <TextField
+          
           required
           id="outlined-required"
           label="Message"
           defaultValue="Message"
           variant="outlined"
+          multiline={true}
+          rows={6}
+          style={{width:'100%'}}
           InputProps={{
             className: classes.outlined
           }}
         />
+         <Button
+        variant="contained"
+        color="primary"
+        style={{marginTop: '4%', width: '15%'}}
+        className={classes.button}
+        // endIcon={<Icon>send</Icon>}
+      >
+        Send
+      </Button>
        
-      </div>
+      </Container>
+      
     </form>
+    </StylesProvider>
   );
 }
+
+
+const Container = styled.div`
+  margin: 15% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // border: 1px solid red;
+  width: 60%;
+`;
+
+

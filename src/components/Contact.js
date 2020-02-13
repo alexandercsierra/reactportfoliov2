@@ -7,13 +7,14 @@ import logo from '../imgs/smallerlogo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import {faEnvelope, faArrowRight} from '@fortawesome/free-solid-svg-icons'
+import {faEnvelope, faArrowRight, faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import { dom } from '@fortawesome/fontawesome-svg-core'
+import MUIForm from './MUIForm'
 dom.watch()
 
 
 
-library.add(faGithubSquare, faLinkedin, faEnvelope, faArrowRight)
+library.add(faGithubSquare, faLinkedin, faEnvelope, faArrowRight, faArrowLeft)
 
 export default function Contact() {
     const [isFlipped, setIsFlipped] = useState(false)
@@ -46,13 +47,21 @@ export default function Contact() {
                         </TextDiv>
                     </FrontContainer>
                     <FlipDiv>
-                    <a onClick={handleClick}><Icon  className="fas fa-arrow-right"></Icon></a>
+                    <A onClick={handleClick}><Icon  className="fas fa-arrow-right"></Icon></A>
                     </FlipDiv>
                 </CardFront>
          
                 <CardBack>
-                  <Form/>
-                  <p onClick={handleClick}>Click to flip >></p>
+                  {/* <Form/> */}
+                    <BackDiv>
+                        <MUIForm/>
+                    </BackDiv>
+                    <FlipDiv>
+                        <A onClick={handleClick}><Icon  className="fas fa-arrow-left"></Icon></A>
+                    </FlipDiv>
+                    
+                  
+                  
                 </CardBack>
               </ReactCardFlip>
               {/* <Form/> */}
@@ -63,6 +72,13 @@ export default function Contact() {
 
     )
 }
+
+const A = styled.a`
+    // border: 1px solid red;
+    cursor: pointer;
+    margin-right: 2%;
+    margin-bottom: 2%;
+`;
 
 const Container = styled.div`
     margin: 4% auto;
@@ -107,7 +123,7 @@ const Button = styled.button`
 
 const ImgDiv = styled.div`
     width: 50%;
-    border: 1px solid blue;
+    // border: 1px solid blue;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,7 +131,7 @@ const ImgDiv = styled.div`
 `;
 
 const Img = styled.img`
-    border: 1px solid green;
+    // border: 1px solid green;
     // margin-left: 4%;
     // @media(max-width: 1160px){
     //     width: 40%;
@@ -127,10 +143,18 @@ const TextDiv = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
+    // border: 1px solid red;
     width: 50%;
 `;
 
+const BackDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    // border: 1px solid green;
+    width: 100%;
+    height: 90%;
+
+`;
 
 const CardFront = styled.div`
     // border: 1px solid red;
@@ -173,10 +197,11 @@ const CardFront = styled.div`
 
 const CardBack = styled.div`
     box-shadow: #000000 0.3em 0.3em 1em;
-    background: #f1f1f1;
+    background: #010101;
     width: 350px;
     height: 233px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     @media(min-width: 530px){

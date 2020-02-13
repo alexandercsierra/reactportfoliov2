@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 body {
@@ -49,4 +50,27 @@ code {
     padding: 3% 0;
   }
 }
+
+.MuiOutlinedInput-input{
+  color: white;
+  /* background: white; */
+}
+
+.makeStyles-root-1{
+  /* background: #1C1C1C; */
+
+}
+
+.MuiOutlinedInput-notchedOutline{
+  border-color: white;
+}
+
+
+
+.MuiInputLabel-root{
+  color: white;
+}
+
+
+
 
