@@ -38,11 +38,9 @@ export default function Home() {
                             <Link href="https://www.linkedin.com/in/alexander-sierra-b7519673/" target="_blank"><Icon className="fab fa-linkedin-in"></Icon></Link>
                             <Link href="https://github.com/alexandercsierra" target="_blank"><Icon className="fab fa-github"></Icon></Link>
                             <Link href="https://github.com/alexandercsierra" target="_blank"><Icon className="fab fa-twitter"></Icon></Link>
-
                         </IconDiv>
                     </TitleDiv>        
                 </FlexDiv>
-                
             </FadeIn>
             <Footer footerClass={'stickyFooter'}/>
         </Container>
@@ -51,17 +49,15 @@ export default function Home() {
 
 
 const Container = styled.div`
-    // width: 80%;
-    height: 100vh;
+    height: 80vh;
     // border: 1px solid red;
-    margin: 100px auto;
-
-    justify-content: center;
+    margin 0 auto;
+    padding-top: 8%;
     @media (max-width: 1400px){
-        margin: 200px auto;
+        padding-top: 15%;
     }
     @media(max-width: 990px){
-        margin: 100px auto;
+        // margin: 5% auto;
     }
 `;
 

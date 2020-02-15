@@ -45,10 +45,10 @@ const ImgDiv = styled.div`
         width: 50%;
     }
     @media(max-width: 1050px){
-        width: 25%
+        width: 50%
     }
     @media(max-width: 750px){
-        width: 40%
+        width: 70%
     }
 `;
 

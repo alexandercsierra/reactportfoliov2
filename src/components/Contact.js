@@ -98,6 +98,8 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    // margin-bottom: 10%;
+    // border: 1px solid red;
 
     @media(max-width:1400px){
         margin-top: 8%;
@@ -114,10 +116,10 @@ const Container = styled.div`
         margin-top: 4%;
     }
     @media(max-width:570px){
-        margin-top: 25%;
+        margin-top: 20%;
     }
     @media(max-width:400px){
-        margin-top: 50%;
+        margin-top: 15%;
     }
 `;
 

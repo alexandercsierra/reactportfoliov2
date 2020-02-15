@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles, StylesProvider } from '@material-ui/core/styles';
 import styled from 'styled-components'
@@ -21,13 +21,31 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function FormPropsTextFields() {
-    // console.log('from form', props)
   const classes = useStyles();
-//   const {newclass} = props;
+
+  const [email, setEmail] = useState({
+    name: '',
+    email:'',
+    message: ''
+  })
+
+  const handleChange = e => {
+    setEmail({
+      ...email,
+      [e.target.name]: e.target.value
+    })
+    console.log(email);
+  }
+
+  const onSubmit = e => {
+    e.preventDefault();
+    console.log(email);
+  }
+
 
   return (
     <StylesProvider injectFirst>
-    <form className={classes.root} noValidate autoComplete="off" style={{width: '100%'}}>
+    <form className={classes.root} noValidate autoComplete="off" style={{width: '100%'}} onSubmit={onSubmit}>
       
       
       <Container>
@@ -35,7 +53,11 @@ export default function FormPropsTextFields() {
           required
           id="outlined-required"
           label="Name"
-          defaultValue="Name"
+          name="name"
+          // defaultValue="Name"
+          value={email.name}
+          onChange={handleChange}
+          placeholder="Name"
           variant="outlined"
           style={{width:'100%'}}
           InputProps={{
@@ -46,7 +68,11 @@ export default function FormPropsTextFields() {
           required
           id="outlined-required"
           label="Email"
-          defaultValue="Email"
+          name="email"
+          // defaultValue="Email"
+          value={email.email}
+          onChange={handleChange}
+          placholder="Email"
           variant="outlined"
           style={{width:'100%'}}
           InputProps={{
@@ -58,17 +84,22 @@ export default function FormPropsTextFields() {
           required
           id="outlined-required"
           label="Message"
-          defaultValue="Message"
+          name="message"
+          // defaultValue="Message"
+          placeholder="Message"
           variant="outlined"
           multiline={true}
           rows={6}
           style={{width:'100%'}}
+          value={email.message}
+          onChange={handleChange}
           InputProps={{
             className: classes.outlined
           }}
         />
          <Button
         variant="contained"
+        type="submit"
         color="primary"
         style={{marginTop: '4%', width: '15%'}}
         className={classes.button}
