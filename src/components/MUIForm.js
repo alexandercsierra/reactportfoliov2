@@ -37,12 +37,10 @@ export default function FormPropsTextFields() {
       ...email,
       [e.target.name]: e.target.value
     })
-    console.log(email);
   }
 
   const onSubmit = e => {
     e.preventDefault();
-    console.log(email);
     axios.post('https://portfolioemailserver.herokuapp.com/email/', email)
       .then(res=>setSent(true))
       .catch(err=>console.log(err))
