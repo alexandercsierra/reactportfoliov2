@@ -1,7 +1,6 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 import styled from 'styled-components'
-import logo from '../imgs/whitebacklight.png'
 
 export default function Nav() {
     return (
@@ -23,14 +22,3 @@ const NavBar = styled.nav`
         width: 100%;
     }
 `;
-
-const Img = styled.img`
-  width: 5%
-`;
-
-// const TheLink = styled(NavLink)`
-//     text-decoration: none;
-//     // color: #F1F1F1;
-//     padding: 2% 4%;
-//     width: 10%;
-// `;

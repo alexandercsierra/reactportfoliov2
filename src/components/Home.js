@@ -2,10 +2,8 @@ import React from 'react'
 import FadeIn from 'react-fade-in'
 import Footer from './Footer'
 import styled from 'styled-components'
-import profile from '../imgs/transprofile.png'
 import Typical from 'react-typical'
 import logo from '../imgs/smallerlogo.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faGithub, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
@@ -158,37 +156,37 @@ const Img = styled.img`
 `;
 
 
-const Button = styled.button`
-    background: #21254f;
-    border: 1px solid #21254f;
-    padding: 1.5%;
-    border-radius: 5px;
-    color: #f1f1f1;
-    font-size: 1rem;
-    cursor: pointer;
-    width: 20%;
-    margin-top: 3%;
+// const Button = styled.button`
+//     background: #21254f;
+//     border: 1px solid #21254f;
+//     padding: 1.5%;
+//     border-radius: 5px;
+//     color: #f1f1f1;
+//     font-size: 1rem;
+//     cursor: pointer;
+//     width: 20%;
+//     margin-top: 3%;
     
-    &:hover {
-        background: #1C1C1C;
-        color: #f1f1f1;
-        border: 1px solid #f1f1f1;
-    }
+//     &:hover {
+//         background: #1C1C1C;
+//         color: #f1f1f1;
+//         border: 1px solid #f1f1f1;
+//     }
 
-    @media (max-width: 1400px){
-        width: 10%;
-        padding: 2%;
-    }
-    @media (max-width: 1160px){
-        width: 15%;
-        padding: 2%;
-    }
-    @media (max-width: 640px){
-        width: 20%;
-        padding: 2.5%;
-    }
-    @media (max-width: 460px){
-        width: 30%;
-        padding: 3%;
-    }
-`;
+//     @media (max-width: 1400px){
+//         width: 10%;
+//         padding: 2%;
+//     }
+//     @media (max-width: 1160px){
+//         width: 15%;
+//         padding: 2%;
+//     }
+//     @media (max-width: 640px){
+//         width: 20%;
+//         padding: 2.5%;
+//     }
+//     @media (max-width: 460px){
+//         width: 30%;
+//         padding: 3%;
+//     }
+// `;

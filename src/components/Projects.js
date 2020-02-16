@@ -3,7 +3,6 @@ import Footer from './Footer'
 import styled from 'styled-components'
 import {projectlist} from '../data/projectlist'
 import Project from './Project'
-import Carousel from './Carousel'
 
 export default function Projects() {
 
@@ -70,23 +69,23 @@ const Button = styled.button`
 
 `;
 
-const LeftDiv = styled.div`
-    width: 100%;
-    border: 1px solid red;
-`;
+// const LeftDiv = styled.div`
+//     width: 100%;
+//     border: 1px solid red;
+// `;
 
-const Img = styled.img`
-    width: 60%;
-`;
+// const Img = styled.img`
+//     width: 60%;
+// `;
 
 const Title = styled.h1`
     margin: 4%;
     font-size: 3rem;
 `;
 
-const ProjectTitles = styled.div`
+// const ProjectTitles = styled.div`
 
-`;
+// `;
 
 const ProjectDiv = styled.div`
     display: flex;

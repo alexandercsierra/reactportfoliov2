@@ -5,13 +5,14 @@ import Home from './components/Home'
 import {Route} from 'react-router-dom'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
-import Footer from './components/Footer'
-import styled from 'styled-components'
 import About from './components/About'
 import Carousel from './components/Carousel'
 
 
 function App() {
+
+  console.log(message);
+
   return (
       <div className="App">
         <Nav/>   
@@ -34,22 +35,74 @@ function App() {
   );
 }
 
-const ImgDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 5%;
+const message = `
+
+                                __                              
+ _____ _    _   _              |  |                             
+|  |  |_|  | |_| |_ ___ ___ ___|  |                             
+|     | |  |  _|   | -_|  _| -_|__|                             
+|__|__|_|  |_| |_|_|___|_| |___|__|                             
+ _____ _          _          ___                               
+|_   _| |_ ______| |_ ___   |  _|___ ___                       
+ | | |   | .'|   | '_|_ -|  |  _| . |  _|                      
+ |_| |_|_|__,|_|_|_,_|___|  |_| |___|_|                        
+     _           _   _                    _                     
+ ___| |_ ___ ___| |_|_|___ ___    ___ _ _| |_                   
+|  _|   | -_|  _| '_| |   | . |  | . | | |  _|                  
+|___|_|_|___|___|_,_|_|_|_|_  |  |___|___|_|                    
+                          |___|                   _             
+                          _   ___     _ _        |_|_           
+ _____ _ _    ___ ___ ___| |_|  _|___| |_|___   |_|| |          
+|     | | |  | . | . |  _|  _|  _| . | | | . |   _ | |          
+|_|_|_|_  |  |  _|___|_| |_| |_| |___|_|_|___|  |__|_|          
+      |___|  |_|                                 |_|
+      
+_____            _             
+|   | |___ ___ _| |   ___                                       
+| | | | -_| -_| . |  | .'|                                      
+|_|___|___|___|___|  |__,|                                      
+                 _                                              
+ ___ ___ ___ ___| |_                                            
+|  _| -_| .'|  _|  _|                                           
+|_| |___|__,|___|_|              _____                          
+   _             _              |___  |                         
+ _| |___ _ _ ___| |___ ___ ___ ___|  _|                         
+| . | -_| | | -_| | . | . | -_|  _|_|                           
+|___|___|\_/|___|_|___|  _|___|_| |_|                           
+     _ _     _        |_|       _           _                   
+ ___| |_|___| |_    ___ ___ ___| |_ ___ ___| |_                 
+|  _| | |  _| '_|  |  _| . |   |  _| .'|  _|  _|                
+|___|_|_|___|_,_|  |___|___|_|_|_| |__,|___|_|                  
+           _                  _                                 
+ ___ ___ _| |   ___ ___ ___ _| |   _____ ___                    
+| .'|   | . |  |_ -| -_|   | . |  |     | -_|                   
+|__,|_|_|___|  |___|___|_|_|___|  |_|_|_|___|                __ 
+                                         _         _        |  |
+ ___    _____ ___ ___ ___ ___ ___ ___   | |_ ___ _| |___ _ _|  |
+| .'|  |     | -_|_ -|_ -| .'| . | -_|  |  _| . | . | .'| | |__|
+|__,|  |_|_|_|___|___|___|__,|_  |___|  |_| |___|___|__,|_  |__|
+                             |___|                      |___|   
+
 `;
 
-const Img = styled.img`
-  width: 15%;
-  @media(max-width: 1350px){
-    width: 20%;
-  }
-  @media(max-width: 970px){
-    width: 35%;
-  }
-`;
+
+
+// const ImgDiv = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-top: 5%;
+// `;
+
+// const Img = styled.img`
+//   width: 15%;
+//   @media(max-width: 1350px){
+//     width: 20%;
+//   }
+//   @media(max-width: 970px){
+//     width: 35%;
+//   }
+// `;
 
 
 export default App;

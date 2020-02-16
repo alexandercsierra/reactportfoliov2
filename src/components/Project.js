@@ -1,10 +1,7 @@
 import React from 'react'
-import { projectlist } from '../data/projectlist'
 import styled from 'styled-components';
-import IconButton from '@material-ui/core/IconButton';
-import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab, faHtml5, faCss3Alt, faJs, faReact, faGithubSquare, faYoutube} from '@fortawesome/free-brands-svg-icons'
+import { faHtml5, faCss3Alt, faJs, faReact, faYoutube} from '@fortawesome/free-brands-svg-icons'
 import {faCube, faLink} from '@fortawesome/free-solid-svg-icons'
 import { dom } from '@fortawesome/fontawesome-svg-core'
 

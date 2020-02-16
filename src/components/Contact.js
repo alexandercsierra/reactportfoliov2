@@ -1,10 +1,8 @@
 import React, {useState} from 'react'
 import ReactCardFlip from 'react-card-flip';
 import Footer from './Footer'
-import Form from './Form'
 import styled from 'styled-components'
 import logo from '../imgs/smallerlogo.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import {faEnvelope, faArrowRight, faArrowLeft} from '@fortawesome/free-solid-svg-icons'
@@ -156,15 +154,15 @@ const FlipDiv = styled.div`
     align-items: flex-end;
 `;
 
-const Button = styled.button`
-    margin: 1%;
-    border: none;
-    background: none;
-    color: #f1f1f1;
-    border: 
-    padding: 1%;
-    font-size: 1.2rem;
-`;
+// const Button = styled.button`
+//     margin: 1%;
+//     border: none;
+//     background: none;
+//     color: #f1f1f1;
+//     border: 
+//     padding: 1%;
+//     font-size: 1.2rem;
+// `;
 
 const ImgDiv = styled.div`
     width: 50%;
