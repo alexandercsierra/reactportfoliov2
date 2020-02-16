@@ -38,10 +38,33 @@
   }
 }
 
+/* .stickyFooter {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1%;
+  background-color: #2b2b2b;
+  color: #f1f1f1;
+  text-align: center;
+} */
+/* 
+.footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1%;
+  background-color: #2b2b2b;
+  color: #f1f1f1;
+  text-align: center;
+} */
+
+
 .footer{
   background: #2b2b2b;
     width: 100%;
-    padding: 2%;
+    padding: 1%;
 }
 
 .stickyFooter{
@@ -50,5 +73,6 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    padding: 2%;
+    padding: 1%;
 }
+

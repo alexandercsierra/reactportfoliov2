@@ -37,7 +37,7 @@ export default function Home() {
                             <Link href="mailto:alexandercsierra@gmail.com" target="_blank"><Icon className="fas fa-envelope"></Icon></Link>
                             <Link href="https://www.linkedin.com/in/alexander-sierra-b7519673/" target="_blank"><Icon className="fab fa-linkedin-in"></Icon></Link>
                             <Link href="https://github.com/alexandercsierra" target="_blank"><Icon className="fab fa-github"></Icon></Link>
-                            <Link href="https://github.com/alexandercsierra" target="_blank"><Icon className="fab fa-twitter"></Icon></Link>
+                            <Link href="https://twitter.com/asierrawebdev" target="_blank"><Icon className="fab fa-twitter"></Icon></Link>
                         </IconDiv>
                     </TitleDiv>        
                 </FlexDiv>
@@ -91,10 +91,14 @@ let Icon = styled.svg`
     @media (max-width: 500px){
         font-size: 1.8rem;
     }
+    &:hover{
+        color: #4E72D4;
+    }
 `;
 
 let Link = styled.a`
     margin: 0 4%;
+    
 `;
 
 const Name = styled.h1`

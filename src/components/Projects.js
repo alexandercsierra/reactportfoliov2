@@ -3,6 +3,7 @@ import Footer from './Footer'
 import styled from 'styled-components'
 import {projectlist} from '../data/projectlist'
 import Project from './Project'
+import Carousel from './Carousel'
 
 export default function Projects() {
 

@@ -8,6 +8,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import styled from 'styled-components'
 import About from './components/About'
+import Carousel from './components/Carousel'
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route exact path='/'><Home/></Route>
         <Route path='/about'><About/></Route>
         <Route path='/projects'><Projects/></Route>
+        <Route path='/3dmodels'><Carousel/></Route>
         <Route path='/contact'><Contact/></Route>
         
     

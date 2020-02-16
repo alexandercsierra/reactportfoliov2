@@ -62,10 +62,8 @@ const Icon = styled.svg`
 const Container = styled.div`
     display: flex;
     margin-top: 2%;
-    background: #21254f;
-    // background: #21113f;
-
-    // background: linear-gradient(to right, #123d4c 0%, #21113f 90%);
+    // background: #21254f1;
+    background: rgba(33,37,79,.3);
 
     @media(max-width: 960px){
         flex-direction: column;

@@ -39,8 +39,11 @@ export default function Contact() {
                             <Title>Front End Web Developer</Title>
                             <div>
                                 <List style={{color: 'white', textAlign: 'left', marginTop: '15%'}}>
-                                    <li>JavaScript</li>
-                                    <li>React/Redux</li>
+                                    <li>HTML/CSS/JavaScript</li>
+                                    <li>React</li>
+                                    <li>Redux</li>
+                                    <li>Less</li>
+                                    <li>Responsive Design</li>
                                 </List>
                                 
                             </div>
@@ -138,6 +141,9 @@ let Icon = styled.svg`
     color: #f1f1f1;
     // width: 20%;
     // border: 1px solid red;
+    &:hover{
+        color: #4E72D4;
+    }
 `;
 
 

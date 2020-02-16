@@ -33,9 +33,27 @@ code {
   text-align: center;
 }
 
+.links:hover{
+  text-decoration:none;
+  color: #4E72D4;
+}
+
 .active{
+  text-decoration: none;
   background: #4E72D4;
   text-align: center;
+}
+
+@media(max-width: 1550px){
+  .links{
+    width: 10%;
+  }
+}
+
+@media(max-width: 1110px){
+  .links{
+    width: 12%;
+  }
 }
 
 @media(max-width: 950px){
@@ -44,10 +62,17 @@ code {
   }
 }
 
+@media(max-width: 650px){
+  .links{
+    width: 20%;
+  }
+}
+
 @media(max-width: 500px){
   .links{
-    width: 33.3%;
-    padding: 3% 0;
+    font-size: .8rem;
+    width: 20%;
+    padding: 2% 0;
   }
 }
 
@@ -71,6 +96,9 @@ code {
   color: white;
 }
 
+.carousel-item{
+  background: black;
+}
 
 
 

@@ -9,6 +9,7 @@ export default function Nav() {
             <NavLink to="/" exact={true} className={'links'}>Home</NavLink>
             <NavLink to="/about"  className={'links'}>About</NavLink>
             <NavLink to="/projects" className={'links'}>Projects</NavLink>
+            <NavLink to="/3dmodels" className={'links'}>3D Models</NavLink>
             <NavLink to="/contact" className={'links'}>Contact</NavLink>
         </NavBar>
     )
@@ -17,8 +18,8 @@ export default function Nav() {
 const NavBar = styled.nav`
     display: flex;
     justify-content: flex-end;
-    @media(max-width: 500px){
-        justify-content: center;
+    @media(max-width: 650px){
+        justify-content: space-around;
         width: 100%;
     }
 `;
