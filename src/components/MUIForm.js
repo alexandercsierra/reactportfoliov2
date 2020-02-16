@@ -23,6 +23,7 @@ const useStyles = makeStyles(theme => ({
 export default function FormPropsTextFields() {
   const classes = useStyles();
   const [sent, setSent] = useState(false);
+  const [buttonText, setButtonText] = useState('send');
   const [email, setEmail] = useState({
     name: '',
     email:'',
@@ -112,9 +113,9 @@ export default function FormPropsTextFields() {
         color="primary"
         style={{marginTop: '4%', width: '15%'}}
         className={classes.button}
-        // endIcon={<Icon>send</Icon>}
+        onClick={()=>{setButtonText('loading...')}}
       >
-        Send
+        {buttonText}
       </Button>
        
       </Container>
