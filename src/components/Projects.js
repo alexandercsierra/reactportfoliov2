@@ -16,7 +16,7 @@ export default function Projects() {
             <Title>Projects</Title>
             <ProjectDiv>
                 {projectlist.map(proj=>{
-                    return <Project project={proj}/>
+                    return <Project key={proj.id} project={proj}/>
                 })}
             </ProjectDiv>
             <Button onClick={scrollToTop}>Back to top</Button>
