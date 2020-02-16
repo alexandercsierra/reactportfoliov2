@@ -35,12 +35,15 @@ code {
 
 .links:hover{
   text-decoration:none;
-  color: #4E72D4;
+  color: #f1f1f1;
+  background: #2a3e72;
+  /* background: #258CB2; */
 }
 
 .active{
   text-decoration: none;
   background: #4E72D4;
+  color: #f1f1f1;
   text-align: center;
 }
 
@@ -100,5 +103,21 @@ code {
   background: black;
 }
 
+.MuiButton-root{
+  margin: 4%;
+  width: 25%;
+}
+
+@media(max-width: 600px){
+  .MuiButton-root{
+    width: 30%;
+  }
+}
+
+@media(max-width: 500px){
+  .MuiButton-root{
+    width: 35%;
+  }
+}
 
 
