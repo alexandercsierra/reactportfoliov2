@@ -22,6 +22,7 @@ const useStyles = makeStyles(theme => ({
 export default function FormPropsTextFields() {
   const classes = useStyles();
   const [sent, setSent] = useState(false);
+  // const [buttonText, setButtonText] = useState('send');
   const [buttonText, setButtonText] = useState('send');
   const [email, setEmail] = useState({
     name: '',
@@ -110,7 +111,7 @@ export default function FormPropsTextFields() {
         variant="contained"
         type="submit"
         color="primary"
-        style={{marginTop: '4%', width: '15%'}}
+        // style={{marginTop: '4%', width: '15%'}}
         className={classes.button}
         onClick={()=>{setButtonText('loading...')}}
       >
@@ -160,5 +161,6 @@ const Container = styled.div`
   }
 
 `;
+
 
 
