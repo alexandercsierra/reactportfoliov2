@@ -16,9 +16,9 @@ export default function Project(props) {
     return (
         <Container>
             <LeftDiv>
-                <ProjectLink href={project.url}><Title>{project.title}</Title></ProjectLink>
+                <ProjectLink href={project.url} target="_blank"><Title>{project.title}</Title></ProjectLink>
                 <ImgDiv>
-                <ProjectLink href={project.url}><Img src={project.image}/></ProjectLink>
+                <ProjectLink href={project.url} target="_blank"><Img src={project.image}/></ProjectLink>
                 </ImgDiv>
             </LeftDiv>
             <RightDiv>
