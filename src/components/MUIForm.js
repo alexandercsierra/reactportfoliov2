@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles, StylesProvider } from '@material-ui/core/styles';
 import styled from 'styled-components'
-
+import axios from 'axios'
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon'
 
@@ -22,12 +22,14 @@ const useStyles = makeStyles(theme => ({
 
 export default function FormPropsTextFields() {
   const classes = useStyles();
-
+  const [sent, setSent] = useState(false);
   const [email, setEmail] = useState({
     name: '',
     email:'',
     message: ''
   })
+
+  
 
   const handleChange = e => {
     setEmail({
@@ -40,17 +42,22 @@ export default function FormPropsTextFields() {
   const onSubmit = e => {
     e.preventDefault();
     console.log(email);
+    axios.post('https://portfolioemailserver.herokuapp.com/email/', email)
+      .then(res=>setSent(true))
+      .catch(err=>console.log(err))
+
   }
 
 
   return (
     <StylesProvider injectFirst>
-    <form className={classes.root} noValidate autoComplete="off" style={{width: '100%'}} onSubmit={onSubmit}>
+    {sent===false && <form className={classes.root} noValidate autoComplete="off" style={{width: '100%'}} onSubmit={onSubmit}>
       
       
       <Container>
         <TextField
           required
+          autoComplete="off"
           id="outlined-required"
           label="Name"
           name="name"
@@ -66,6 +73,7 @@ export default function FormPropsTextFields() {
         />
         <TextField
           required
+          autoComplete="off"
           id="outlined-required"
           label="Email"
           name="email"
@@ -82,6 +90,7 @@ export default function FormPropsTextFields() {
         <TextField
           
           required
+          autoComplete="off"
           id="outlined-required"
           label="Message"
           name="message"
@@ -110,7 +119,10 @@ export default function FormPropsTextFields() {
        
       </Container>
       
-    </form>
+    </form>}
+    {sent && <div style={{width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems:'center'}}>
+      <h1>Thanks for your message!</h1>
+      </div>}
     </StylesProvider>
   );
 }
