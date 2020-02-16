@@ -16,9 +16,9 @@ export default function Project(props) {
     return (
         <Container>
             <LeftDiv>
-                <Title>{project.title}</Title>
+                <ProjectLink href={project.url}><Title>{project.title}</Title></ProjectLink>
                 <ImgDiv>
-                    <Img src={project.image}/>
+                <ProjectLink href={project.url}><Img src={project.image}/></ProjectLink>
                 </ImgDiv>
             </LeftDiv>
             <RightDiv>
@@ -26,9 +26,9 @@ export default function Project(props) {
                     <p style={{width: '100%'}}>{project.desc}</p>
                 </TextDiv>
                 <LinkDiv>
-                    <A href={project.repo} target="_blank"><Icon className="fab fa-github-square"  style={{color: "#f1f1f1"}}></Icon></A>
-                    <A href={project.url} target="_blank"><Icon className="fas fa-link"  style={{color: "#f1f1f1"}}></Icon></A>
-                    {project.title === "Characteristiq" && <A href={project.video} target="_blank"><Icon className="fab fa-youtube"  style={{color: "#f1f1f1"}}></Icon></A>}
+                    <A href={project.repo} target="_blank"><Icon className="fab fa-github-square" ></Icon></A>
+                    <A href={project.url} target="_blank"><Icon className="fas fa-link" ></Icon></A>
+                    {project.title === "Characteristiq" && <A href={project.video} target="_blank"><Icon className="fab fa-youtube" ></Icon></A>}
                 </LinkDiv>
             </RightDiv>
             
@@ -40,6 +40,17 @@ export default function Project(props) {
 
 const A = styled.a`
     margin 0 20px;
+    
+`;
+
+const ProjectLink = styled.a`
+    color: #f1f1f1;
+    text-decoration: none;
+    &:hover{
+        color: #7f7f7f;
+        text-decoration: none;
+    }
+
 `;
 
 const Title = styled.h2`
@@ -52,8 +63,12 @@ const Title = styled.h2`
 
 const Icon = styled.svg`
     font-size: 3rem;
+    color: #f1f1f1
     @media(max-width: 760px){
         font-size: 2.5rem;
+    }
+    &:hover{
+        color: #7f7f7f;
     }
 `;
 const Container = styled.div`
