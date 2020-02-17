@@ -7,9 +7,18 @@ import zingers from "../imgs/zingers.png"
 import holiday from "../imgs/holiday.png"
 import char from "../imgs/char.png"
 import pug from "../imgs/thepug.png"
+import weekly from '../imgs/weekly.png'
 
 
 let obj = {
+    weekly: {
+        letter: "W",
+        title: "Weekly Task Tracker",
+        image: weekly,
+        desc: "A task tracker which presents the user with daily tasks dependant upon a complex A/B week schedule. Tasks may be marked completed, but do not disappear so that the user can clearly see what has been accomplished and what is left to do. Completed tasks are stored in local storage. This app was created using Moment JS for time tracking, as well as React, styled-components, and React Router",
+        repo: "https://github.com/alexandercsierra/weeklyTaskTracker",
+        url: "https://weeklytasktracker.now.sh/"
+    },
     planets: {
         letter: "P",
         title: "Planetary Weights",
