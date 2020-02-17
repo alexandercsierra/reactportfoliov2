@@ -34,14 +34,16 @@ export default function Contact() {
                         
                         <TextDiv>
                             <Name>Alexander C Sierra</Name>
-                            <Title>Front End Web Developer</Title>
+                            <Title>Full Stack Web Developer</Title>
                             <div>
                                 <List style={{color: 'white', textAlign: 'left', marginTop: '15%'}}>
                                     <li>HTML/CSS/JavaScript</li>
-                                    <li>React</li>
-                                    <li>Redux</li>
-                                    <li>Less</li>
+                                    <li>React/Redux</li>
                                     <li>Responsive Design</li>
+                                    <li>Material UI</li>
+                                    <li>Styled Components</li>
+                                    <li>Node/Express</li>
+                                    <li>RESTful APIs</li>
                                 </List>
                                 
                             </div>
@@ -197,6 +199,10 @@ const TextDiv = styled.div`
     @media(max-width: 740px){
         width: 100%;
         margin-top: 8%;
+    }
+    @media(max-width: 400px){
+        width: 100%;
+        margin-top: 0;
     }
     
 `;
