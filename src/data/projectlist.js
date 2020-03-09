@@ -57,17 +57,17 @@ let obj = {
         title: "Golden Girls API",
         image: heroku,
         desc: "A simple API, deployed to Heroku, built in Node JS that would allow an application to receive randomized quotes from the popular TV series 'The Golden Girls'. Work on this API is still in progress",
-        repo: "https://github.com/alexandercsierra/goldenGirlsAPI",
-        url: "https://golden-girls-api.herokuapp.com/"
+        repo: "https://github.com/alexandercsierra/goldenGirlsAPIv3",
+        url: "https://goldengirlsquotes.herokuapp.com/"
     },
-    zingers: {
-        letter: "Z",
-        title: "Zbornak Zingers",
-        image: zingers,
-        desc: "A simply frontend application designed to compliment the Golden Girls API, which will display a randomized quote in a card upon request. Created using React, styled-components, and bootstrap.",
-        repo: "https://github.com/alexandercsierra/zbornakzingersreact",
-        url: "https://zbornakzingers.netlify.com/"
-    },
+    // zingers: {
+    //     letter: "Z",
+    //     title: "Zbornak Zingers",
+    //     image: zingers,
+    //     desc: "A simply frontend application designed to compliment the Golden Girls API, which will display a randomized quote in a card upon request. Created using React, styled-components, and bootstrap.",
+    //     repo: "https://github.com/alexandercsierra/zbornakzingersreact",
+    //     url: "https://zbornakzingers.netlify.com/"
+    // },
     gifs: {
         letter: "S",
         title: "Sad Pug Gifs",
