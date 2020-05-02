@@ -105,7 +105,7 @@ let obj = {
         letter: "R",
         title: "Rock Paper Scissors",
         image: rps,
-        desc: "A simply rock, paper, scissors game built using HTML, CSS, and vanilla JavaScript",
+        desc: "A simple rock, paper, scissors game built using HTML, CSS, and vanilla JavaScript",
         repo: "https://github.com/alexandercsierra/rpsgame",
         url: "https://alexandercsierra.github.io/rockpaperscissors/rpsgame.html"
     }
