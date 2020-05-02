@@ -8,9 +8,18 @@ import holiday from "../imgs/holiday.png"
 import char from "../imgs/char.png"
 import pug from "../imgs/thepug.png"
 import weekly from '../imgs/weekly.png'
+import d8picker from '../imgs/d8picker.png'
 
 
 let obj = {
+    d8: {
+        letter: "D",
+        title: "D8 Picker",
+        image: d8picker,
+        desc: "An app that allows for quick creation of calendar events in a non-standard pattern. A user can create an event template and quickly add it to several calendar days in a sporadic pattern and have these events sync with their google calendar. I contributed as a frontend developer on this project on a cross-functional team of 4 developers and 1 UX designer over the course of two months. This was a build-on project, with our main objective being to improve the mobile user's experience. This was created using ReactJS, Context API, React-Window, styled-components, google OAuth2, and NodeJS",
+        repo: "https://github.com/alexandercsierra/school-calendar-fe",
+        url: "https://d8picker22.now.sh/"
+    },
     weekly: {
         letter: "W",
         title: "Weekly Task Tracker",
@@ -27,6 +36,14 @@ let obj = {
         repo: "https://github.com/alexandercsierra/planetary-weights",
         url: "https://planetary-weights.now.sh/"
     },
+    // sleuthClone: {
+    //     letter: "S",
+    //     title: "Sleuth Clone",
+    //     image: sleuth,
+    //     desc: "A labor of love and work in progress, this project aims to replicate a childhood favorite DOS game, Sleuth. A user can put in their own custom guest names and try to figure out whodunnit. Created using ReactJS, Context API, and styled-components.",
+    //     repo: "https://github.com/alexandercsierra/sleuthv5",
+    //     url: "https://sleuth.now.sh/"
+    // },
     holiday: {
         letter: "H",
         title: "Holiday Postcards",

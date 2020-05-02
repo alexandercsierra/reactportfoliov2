@@ -51,6 +51,9 @@ const Container = styled.div`
     // border: 1px solid red;
     margin 0 auto;
     padding-top: 8%;
+    @mediat (max-width: 1700px){
+        padding-top: 4%;
+    }
     @media (max-width: 1400px){
         padding-top: 15%;
     }
