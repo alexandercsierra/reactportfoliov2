@@ -1,9 +1,9 @@
 import planets from "../imgs/planets.png";
-import rps from "../imgs/rps.png";
+// import rps from "../imgs/rps.png";
 import bookr from "../imgs/bookr.png";
 import cities from "../imgs/cities.png";
 import heroku from "../imgs/heroku.png";
-import zingers from "../imgs/zingers.png"
+// import zingers from "../imgs/zingers.png"
 import holiday from "../imgs/holiday.png"
 import char from "../imgs/char.png"
 import pug from "../imgs/thepug.png"
