@@ -16,11 +16,6 @@ function App() {
   return (
       <div className="App">
         <Nav/>   
-        {/* <FadeIn transitionDuration={1000}>
-          <ImgDiv>
-          <Img src={logo}/> 
-          </ImgDiv>  
-        </FadeIn> */}
           
         <Route exact path='/'><Home/></Route>
         <Route path='/about'><About/></Route>

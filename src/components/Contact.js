@@ -29,7 +29,7 @@ export default function Contact() {
                 <CardFront>
                     <FrontContainer>
                         <ImgDiv>
-                            <Img src={logo}/>
+                            <Img src={logo} alt="logo of 3 computer keycaps, with initials ACS on them in purple and blue"/>
                         </ImgDiv>
                         
                         <TextDiv>
@@ -50,24 +50,22 @@ export default function Contact() {
                         </TextDiv>
                     </FrontContainer>
                     <FlipDiv>
-                    <A onClick={handleClick}><Icon  className="fas fa-arrow-right"></Icon></A>
+                    <A onClick={handleClick}><Icon  alt="arrow to flip card" className="fas fa-arrow-right"></Icon></A>
                     </FlipDiv>
                 </CardFront>
          
                 <CardBack>
-                  {/* <Form/> */}
                     <BackDiv>
                         <MUIForm/>
                     </BackDiv>
                     <FlipDiv>
-                        <A onClick={handleClick}><Icon  className="fas fa-arrow-left"></Icon></A>
+                        <A onClick={handleClick}><Icon alt="arrow to flip card" className="fas fa-arrow-left"></Icon></A>
                     </FlipDiv>
                     
                   
                   
                 </CardBack>
               </ReactCardFlip>
-              {/* <Form/> */}
               
         </Container>
         <Footer footerClass={'stickyFooter'}/>

@@ -11,7 +11,7 @@ export default function About() {
             <FadeIn transitionDuration={1000}>
                 <TopContainer>
                 <ImgDiv>
-                <Img src={profile}/>
+                <Img src={profile} alt="Alex smiling in a puffy vest"/>
                 </ImgDiv>
                 <AboutDiv>
                     <Title>About Me</Title>

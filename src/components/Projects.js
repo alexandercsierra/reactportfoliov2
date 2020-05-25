@@ -69,23 +69,11 @@ const Button = styled.button`
 
 `;
 
-// const LeftDiv = styled.div`
-//     width: 100%;
-//     border: 1px solid red;
-// `;
-
-// const Img = styled.img`
-//     width: 60%;
-// `;
 
 const Title = styled.h1`
     margin: 4%;
     font-size: 3rem;
 `;
-
-// const ProjectTitles = styled.div`
-
-// `;
 
 const ProjectDiv = styled.div`
     display: flex;

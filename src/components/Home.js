@@ -21,7 +21,7 @@ export default function Home() {
             <FadeIn transitionDuration={1000}>
                 <FlexDiv>
                     <ImgDiv>
-                        <Img src={logo}/>
+                        <Img src={logo} alt="logo of 3 computer keycaps, with initials ACS on them in purple and blue"/>
                     </ImgDiv>
                     <TitleDiv>
                         <Name>Alexander C Sierra</Name>
@@ -30,12 +30,11 @@ export default function Home() {
                             loop={1}
                             wrapper="b"/>
                         </Subtitle>
-                        {/* <Button>Let's talk</Button> */}
                         <IconDiv>
                             <Link href="mailto:alexandercsierra@gmail.com" target="_blank"><Icon className="fas fa-envelope"></Icon></Link>
-                            <Link href="https://www.linkedin.com/in/alexander-sierra-b7519673/" target="_blank"><Icon className="fab fa-linkedin-in"></Icon></Link>
-                            <Link href="https://github.com/alexandercsierra" target="_blank"><Icon className="fab fa-github"></Icon></Link>
-                            <Link href="https://twitter.com/asierrawebdev" target="_blank"><Icon className="fab fa-twitter"></Icon></Link>
+                            <Link href="https://www.linkedin.com/in/alexander-sierra-b7519673/" target="_blank"><Icon alt="linked in logo" className="fab fa-linkedin-in"></Icon></Link>
+                            <Link href="https://github.com/alexandercsierra" target="_blank"><Icon alt="github logo" className="fab fa-github"></Icon></Link>
+                            <Link href="https://twitter.com/asierrawebdev" target="_blank"><Icon alt="twitter logo" className="fab fa-twitter"></Icon></Link>
                         </IconDiv>
                     </TitleDiv>        
                 </FlexDiv>
@@ -158,38 +157,3 @@ const Img = styled.img`
     width: 100%;
 `;
 
-
-// const Button = styled.button`
-//     background: #21254f;
-//     border: 1px solid #21254f;
-//     padding: 1.5%;
-//     border-radius: 5px;
-//     color: #f1f1f1;
-//     font-size: 1rem;
-//     cursor: pointer;
-//     width: 20%;
-//     margin-top: 3%;
-    
-//     &:hover {
-//         background: #1C1C1C;
-//         color: #f1f1f1;
-//         border: 1px solid #f1f1f1;
-//     }
-
-//     @media (max-width: 1400px){
-//         width: 10%;
-//         padding: 2%;
-//     }
-//     @media (max-width: 1160px){
-//         width: 15%;
-//         padding: 2%;
-//     }
-//     @media (max-width: 640px){
-//         width: 20%;
-//         padding: 2.5%;
-//     }
-//     @media (max-width: 460px){
-//         width: 30%;
-//         padding: 3%;
-//     }
-// `;
