@@ -18,7 +18,7 @@ export default function Project(props) {
             <LeftDiv>
                 <ProjectLink href={project.url} target="_blank"><Title>{project.title}</Title></ProjectLink>
                 <ImgDiv>
-                <ProjectLink href={project.url} target="_blank"><Img src={project.image}/></ProjectLink>
+                <ProjectLink href={project.url} target="_blank"><Img alt={project.alt} src={project.image}/></ProjectLink>
                 </ImgDiv>
             </LeftDiv>
             <RightDiv>
@@ -26,9 +26,9 @@ export default function Project(props) {
                     <p style={{width: '100%'}}>{project.desc}</p>
                 </TextDiv>
                 <LinkDiv>
-                    <A href={project.repo} target="_blank"><Icon className="fab fa-github-square" ></Icon></A>
-                    <A href={project.url} target="_blank"><Icon className="fas fa-link" ></Icon></A>
-                    {project.title === "Characteristiq" && <A href={project.video} target="_blank"><Icon className="fab fa-youtube" ></Icon></A>}
+                    <A href={project.repo} target="_blank"><Icon alt="github icon" className="fab fa-github-square" ></Icon></A>
+                    <A href={project.url} target="_blank"><Icon alt="link to website" className="fas fa-link" ></Icon></A>
+                    {project.title === "Characteristiq" && <A href={project.video} target="_blank"><Icon alt="youtube icon" className="fab fa-youtube" ></Icon></A>}
                 </LinkDiv>
             </RightDiv>
             
