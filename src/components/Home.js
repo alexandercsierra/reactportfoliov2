@@ -39,22 +39,22 @@ export default function Home() {
                     </TitleDiv>        
                 </FlexDiv>
             </FadeIn>
-            <Footer footerClass={'stickyFooter'}/>
+            <Footer footerClass={''}/>
         </Container>
     )
 }
 
 
 const Container = styled.div`
-    height: 80vh;
+    // height: 100vh;
     // border: 1px solid red;
     margin 0 auto;
-    padding-top: 8%;
+    padding-top: 3%;
     @mediat (max-width: 1700px){
         padding-top: 4%;
     }
     @media (max-width: 1400px){
-        padding-top: 15%;
+        padding-top: 5%;
     }
     @media(max-width: 990px){
         // margin: 5% auto;
@@ -72,6 +72,7 @@ const TitleDiv = styled.div`
 `;
 
 const FlexDiv = styled.div`
+    height: 75vh;
     display: flex;
     justify-content: center;
     align-items: center;
