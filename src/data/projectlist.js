@@ -23,14 +23,14 @@ let obj = {
         repo: "https://github.com/alexandercsierra/school-calendar-fe",
         url: "https://d8picker22.now.sh/"
     },
-    acic: {
-        letter: "A",
-        title: "Animal Crossing Item Calculator",
-        image: ac,
-        alt: "screenshot of a green add item form",
-        desc: "A fullstack project which allows a user to add an item to a database, which can then be searched through and added to a 'cart' which will total the values of the items held within it. Intended for recreational use by players of the Nintendo series Animal Crossing. The frontend uses ReactJS, Material UI, and styled-components. The backend is REST API created with NodeJS and Express.",
-        repo: "https://github.com/alexandercsierra/acitemsearchfe",
-        url: "https://animal-crossing-item-calculator.now.sh/"
+    wl: {
+        letter: "W",
+        title: "WunderList 2.0",
+        image: heroku,
+        alt: "heroku logo",
+        desc: "A backend for a fullstack todo list project I worked on as part of a team over the course of a week. ",
+        repo: "https://github.com/alexandercsierra/back-end?organization=alexandercsierra&organization=alexandercsierra",
+        url: "https://wunderlistbuildweek.herokuapp.com/"
     },
     weekly: {
         letter: "W",
@@ -40,6 +40,15 @@ let obj = {
         desc: "A task tracker which presents the user with daily tasks dependant upon a complex A/B week schedule. Tasks may be marked completed, but do not disappear so that the user can clearly see what has been accomplished and what is left to do. Completed tasks are stored in local storage. This app was created using Moment JS for time tracking, as well as React, styled-components, and React Router",
         repo: "https://github.com/alexandercsierra/weeklyTaskTracker",
         url: "https://weeklytasktracker.now.sh/"
+    },
+    acic: {
+        letter: "A",
+        title: "Animal Crossing Item Calculator",
+        image: ac,
+        alt: "screenshot of a green add item form",
+        desc: "A fullstack project which allows a user to add an item to a database, which can then be searched through and added to a 'cart' which will total the values of the items held within it. Intended for recreational use by players of the Nintendo series Animal Crossing. The frontend uses ReactJS, Material UI, and styled-components. The backend is REST API created with NodeJS and Express.",
+        repo: "https://github.com/alexandercsierra/acitemsearchfe",
+        url: "https://animal-crossing-item-calculator.now.sh/"
     },
     planets: {
         letter: "P",
@@ -121,16 +130,16 @@ let obj = {
         desc: "As part of a team, I created the Marketing and About Us pages for OER Bookr, a source for open source textbooks, using HTML and CSS. I also 3D modelled (and contributed to the design of) our logo in Blender.",
         repo: "https://github.com/Build-Week-Team-OERBookr/UI",
         url: "https://oerbookr2019.netlify.com/"
-    },
-    rps: {
-        letter: "R",
-        title: "Rock Paper Scissors",
-        image: rps,
-        alt: "screenshot with two men playing rock paper scissors with buttons below",
-        desc: "A simple rock, paper, scissors game built using HTML, CSS, and vanilla JavaScript",
-        repo: "https://github.com/alexandercsierra/rpsgame",
-        url: "https://alexandercsierra.github.io/rockpaperscissors/rpsgame.html"
     }
+    // rps: {
+    //     letter: "R",
+    //     title: "Rock Paper Scissors",
+    //     image: rps,
+    //     alt: "screenshot with two men playing rock paper scissors with buttons below",
+    //     desc: "A simple rock, paper, scissors game built using HTML, CSS, and vanilla JavaScript",
+    //     repo: "https://github.com/alexandercsierra/rpsgame",
+    //     url: "https://alexandercsierra.github.io/rockpaperscissors/rpsgame.html"
+    // }
     
 
 }
