@@ -237,7 +237,7 @@ const CardFront = styled.div`
 
     @media(max-width:1020px){
         width: 738px;
-        height: 400px;
+        height: 420px;
     }
     @media(max-width:740px){
         width: 500px;
@@ -284,7 +284,7 @@ const CardBack = styled.div`
 
     @media(max-width:1020px){
         width: 738px;
-        height: 400px;
+        height: 420px;
     }
     @media(max-width:740px){
         width: 500px;
