@@ -1,5 +1,4 @@
-import React, {useEffect} from 'react'
-import axios from 'axios'
+import React from 'react'
 import FadeIn from 'react-fade-in'
 import Footer from './Footer'
 import styled from 'styled-components'
@@ -17,11 +16,6 @@ library.add(faGithub, faLinkedinIn, faEnvelope, faTwitter)
 
 
 export default function Home() {
-
-
-    useEffect(()=>{
-        axios.post('https://portfolioemailserver.herokuapp.com/email/')
-    },[])
 
     
     return (

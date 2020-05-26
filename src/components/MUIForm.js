@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles, StylesProvider } from '@material-ui/core/styles';
 import styled from 'styled-components'
-import axios from 'axios'
 import Button from '@material-ui/core/Button';
 import * as emailjs from 'emailjs-com'
 
