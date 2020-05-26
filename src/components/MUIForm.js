@@ -4,6 +4,7 @@ import { makeStyles, StylesProvider } from '@material-ui/core/styles';
 import styled from 'styled-components'
 import axios from 'axios'
 import Button from '@material-ui/core/Button';
+import * as emailjs from 'emailjs-com'
 
 
 
@@ -41,9 +42,28 @@ export default function FormPropsTextFields() {
 
   const onSubmit = e => {
     e.preventDefault();
-    axios.post('https://portfolioemailserver.herokuapp.com/email/', email)
-      .then(res=>setSent(true))
-      .catch(err=>console.log(err))
+    let templateParams = {
+      from_name: email.name,
+      to_name: 'Alex',
+      subject: `Portfolio Inquiry from ${email.email}`,
+      message_html: email.message
+    }
+    
+
+    let service_id = process.env.REACT_APP_SERVICE_ID;
+    let template_id = process.env.REACT_APP_TEMPLATE_ID;
+    let user_id = process.env.REACT_APP_USER_ID;
+  
+
+    emailjs.send(service_id,template_id, templateParams, user_id)
+      .then(res=>{
+        console.log(res)
+        setSent(true)
+      })
+      .catch(err=>{
+        console.log(err)
+      })
+
 
   }
 
