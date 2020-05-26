@@ -22,6 +22,7 @@ const useStyles = makeStyles(theme => ({
 export default function FormPropsTextFields() {
   const classes = useStyles();
   const [sent, setSent] = useState(false);
+  const [invalidInput, setInvalidInput] = useState(false);
   // const [buttonText, setButtonText] = useState('send');
   const [buttonText, setButtonText] = useState('send');
   const [email, setEmail] = useState({
@@ -41,27 +42,36 @@ export default function FormPropsTextFields() {
 
   const onSubmit = e => {
     e.preventDefault();
-    let templateParams = {
-      from_name: email.name,
-      to_name: 'Alex',
-      subject: `Portfolio Inquiry from ${email.email}`,
-      message_html: email.message
-    }
-    
-
-    let service_id = process.env.REACT_APP_SERVICE_ID;
-    let template_id = process.env.REACT_APP_TEMPLATE_ID;
-    let user_id = process.env.REACT_APP_USER_ID;
+    if (email.name !== "" && email.email!=="" &&email.message!==""){
+      setButtonText('loading...')
+      setInvalidInput(false)
+      let templateParams = {
+        from_name: email.name,
+        to_name: 'Alex',
+        subject: `Portfolio Inquiry from ${email.email}`,
+        message_html: email.message
+      }
+      
   
+      let service_id = process.env.REACT_APP_SERVICE_ID;
+      let template_id = process.env.REACT_APP_TEMPLATE_ID;
+      let user_id = process.env.REACT_APP_USER_ID;
+    
+  
+      emailjs.send(service_id,template_id, templateParams, user_id)
+        .then(res=>{
+          console.log(res)
+          setSent(true)
+        })
+        .catch(err=>{
+          console.log(err)
+        })
 
-    emailjs.send(service_id,template_id, templateParams, user_id)
-      .then(res=>{
-        console.log(res)
-        setSent(true)
-      })
-      .catch(err=>{
-        console.log(err)
-      })
+    }
+
+    else{
+      setInvalidInput(true)
+    }
 
 
   }
@@ -74,7 +84,7 @@ export default function FormPropsTextFields() {
       
       <Container>
         <TextField
-          required
+          isRequired={true}
           autoComplete="off"
           id="outlined-required"
           label="Name"
@@ -130,11 +140,11 @@ export default function FormPropsTextFields() {
         color="primary"
         // style={{marginTop: '4%', width: '15%'}}
         className={classes.button}
-        onClick={()=>{setButtonText('loading...')}}
+        // onClick={}
       >
         {buttonText}
       </Button>
-       
+          {invalidInput && <p>All fields required</p>}
       </Container>
       
     </form>}
