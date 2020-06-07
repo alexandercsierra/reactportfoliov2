@@ -19,6 +19,7 @@ import cafe from "../imgs/blendermodels/cafe.png"
 import donut from "../imgs/blendermodels/donut.png"
 import snes from "../imgs/blendermodels/snes.png"
 import entry from "../imgs/blendermodels/entry.png"
+import mask from "../imgs/blendermodels/mask.jpg"
 import Footer from './Footer'
 
 
@@ -27,62 +28,67 @@ import Footer from './Footer'
 const items = [
   {
     src: jar,
-    // altText: 'Slide 1',
+    altText: '3d model of a craft jar containing a scene with a snowman and several Christmas trees',
     // caption: 'Slide 1'
   },
   {
     src: cathedralinside,
-    // altText: 'Slide 2',
+    altText: '3d model of the inside of a cathedral with chandeliers and stained glass',
     // caption: 'Slide 2'
   },
   {
     src: cathedraloutside,
-    // altText: 'Slide 3',
+    altText: '3d model of the outside of a grey brick cathedral',
     // caption: 'Slide 3'
   },
   {
     src: logomodel,
-    // altText: 'Slide 1',
+    altText: '3d model of a logo of 3 keycaps with the initials ACS',
     // caption: 'Slide 1'
   },
   {
+    src: mask,
+    altText: '3d model of a cloth face mask',
+    // caption: 'Slide 4'
+  },
+  {
     src: spray,
-    // altText: 'Slide 4',
+    altText: '3d model of a spray bottle',
     // caption: 'Slide 4'
   },
   {
     src: lolly,
-    // altText: 'Slide 4',
+    altText: '3d model of a birthday scene with a cake and lollypop',
     // caption: 'Slide 4'
   },
   {
     src: corn,
-    // altText: 'Slide 4',
+    altText: '3d model of a halloween themed scene with candycorn, a pumpkin, and a coffin',
     // caption: 'Slide 4'
   },
   {
     src: chess,
-    // altText: 'Slide 4',
+    altText: '3d model of a low poly chessboard',
     // caption: 'Slide 4'
   },
   {
     src: cafe,
-    // altText: 'Slide 4',
+    altText: '3d model of a cafe as seen from the street',
     // caption: 'Slide 4'
   },
   {
     src: donut,
-    // altText: 'Slide 4',
+    altText: '3d model of a donut and coffee',
     // caption: 'Slide 4'
   },
   {
     src: snes,
-    // altText: 'Slide 4',
+    altText: '3d model of an snes cartridge of Power Rangers',
     // caption: 'Slide 4'
   },
   {
     src: entry,
-    // altText: 'Slide 4',
+    altText: '3d model of an interior, entrway scene',
     // caption: 'Slide 4'
   }
 ];
