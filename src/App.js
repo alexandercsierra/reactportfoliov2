@@ -82,22 +82,4 @@ _____            _
 
 
 
-// const ImgDiv = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   margin-top: 5%;
-// `;
-
-// const Img = styled.img`
-//   width: 15%;
-//   @media(max-width: 1350px){
-//     width: 20%;
-//   }
-//   @media(max-width: 970px){
-//     width: 35%;
-//   }
-// `;
-
-
 export default App;
