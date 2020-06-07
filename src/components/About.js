@@ -15,9 +15,46 @@ export default function About() {
                 </ImgDiv>
                 <AboutDiv>
                     <Title>About Me</Title>
+                    <div>
+                    
+                </div>
                     <Para>Healthcare worker turned web developer, I hold a <Span>B.S. in Health Sciences</Span>. Above all else, I love learning new things, and there is certainly no shortage of that in the development world. My learning is currently taking place at <Span>Lambda School</Span>, where I am also employed as a <Span>Team Lead</Span>.</Para>
 
                     <Para>I find it so satisfying to have a problem, research the solution, then be able to immediately apply my new knowledge to fix a problem I couldn't solve 5 minutes ago. When not developing, I can be found playing trumpet in my community band, or frolicking in the snow.</Para>
+
+                    <h4>Skills</h4>
+                    <div style={{display:'flex', justifyContent:'center'}}>
+
+                        <BtmIconDiv>
+                            <IconLabelDiv>
+                                <Icon alt="html5 logo" className="fab fa-html5"></Icon>
+                                <p>HTML5</p>
+                            </IconLabelDiv>
+                            <IconLabelDiv>
+                                <Icon alt="css3 logo" className="fab fa-css3-alt"></Icon>
+                                <p>CSS3</p>
+                            </IconLabelDiv>
+                            <IconLabelDiv>
+                                <Icon alt="javascript logo" className="fab fa-js"></Icon>
+                                <p>JavaScript</p>
+                            </IconLabelDiv>
+                        {/* </BtmIconDiv>
+                        <BtmIconDiv> */}
+                            <IconLabelDiv>
+                                <Icon alt="react logo" className="fab fa-react"></Icon>
+                                <p>ReactJS</p>
+                            </IconLabelDiv>
+                            <IconLabelDiv>
+                                <Icon alt="python logo" className="fab fa-python"></Icon>
+                                <p>Python3</p>
+                            </IconLabelDiv>
+                            <IconLabelDiv>
+                                <Icon alt="node logo" className="fab fa-node-js"></Icon>
+                                <p>NodeJS</p>
+                            </IconLabelDiv>
+                        </BtmIconDiv>
+                        
+                    </div>
                 </AboutDiv>
                 </TopContainer>
             </FadeIn>
@@ -86,6 +123,49 @@ const Para = styled.p`
     }
     @media(max-width: 500px){
         padding: 2%;
+    }
+`;
+
+const IconLabelDiv = styled.div`
+    // margin: 4% auto;
+`;
+
+let Icon = styled.svg`
+    font-size: 2.5rem;
+    color: #f1f1f1;
+    // width: 20%;
+    // border: 1px solid red;
+    @media (max-width: 990px){
+        font-size: 2rem;
+    }
+    // @media (max-width: 550px){
+    //     font-size: 2.5rem;
+    // }
+    &:hover{
+        color: #4E72D4;
+    }
+`;
+
+const BtmIconDiv = styled.div`
+    // border: 1px solid red;
+    width: 55%;
+    margin: 4% auto;
+    display: flex;
+    justify-content: space-between;
+    @media(max-width: 1300px){
+        width: 65%
+    }
+    @media(max-width: 1100px){
+        width: 75%
+    }
+    @media(max-width: 800px){
+        width: 90%
+    }
+    @media(max-width: 670px){
+        width: 100%
+    }
+    @media(max-width: 550px){
+        flex-direction: column
     }
 `;
 

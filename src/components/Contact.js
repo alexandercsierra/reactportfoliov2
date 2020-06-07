@@ -36,15 +36,12 @@ export default function Contact() {
                             <Name>Alexander C Sierra</Name>
                             <Title>Full Stack Web Developer</Title>
                             <div>
-                                <List style={{color: 'white', textAlign: 'left', marginTop: '15%'}}>
-                                    <li>HTML/CSS/JavaScript</li>
-                                    <li>React/Redux</li>
-                                    <li>Responsive Design</li>
-                                    <li>Material UI</li>
-                                    <li>Styled Components</li>
-                                    <li>Node/Express</li>
-                                    <li>RESTful APIs</li>
-                                </List>
+                            <IconDiv>
+                            <Link href="mailto:alexandercsierra@gmail.com" target="_blank"><Icon className="fas fa-envelope"></Icon></Link>
+                            <Link href="https://www.linkedin.com/in/alexander-sierra-b7519673/" target="_blank"><Icon alt="linked in logo" className="fab fa-linkedin-in"></Icon></Link>
+                            <Link href="https://github.com/alexandercsierra" target="_blank"><Icon alt="github logo" className="fab fa-github"></Icon></Link>
+                            <Link href="https://twitter.com/asierrawebdev" target="_blank"><Icon alt="twitter logo" className="fab fa-twitter"></Icon></Link>
+                        </IconDiv>
                                 
                             </div>
                         </TextDiv>
@@ -85,6 +82,19 @@ const List = styled.ul`
     @media(max-width:570px){
         font-size: .9rem;
     }
+`;
+
+const IconDiv = styled.div`
+    // border: 1px solid red;
+    width: 100%;
+    margin: 4% auto;
+    display: flex;
+    justify-content: center;
+`;
+
+let Link = styled.a`
+    margin: 0 4%;
+    
 `;
 
 const A = styled.a`
@@ -154,15 +164,7 @@ const FlipDiv = styled.div`
     align-items: flex-end;
 `;
 
-// const Button = styled.button`
-//     margin: 1%;
-//     border: none;
-//     background: none;
-//     color: #f1f1f1;
-//     border: 
-//     padding: 1%;
-//     font-size: 1.2rem;
-// `;
+
 
 const ImgDiv = styled.div`
     width: 50%;

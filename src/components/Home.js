@@ -5,12 +5,12 @@ import styled from 'styled-components'
 import Typical from 'react-typical'
 import logo from '../imgs/smallerlogo.png'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faGithub, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedinIn, faTwitter, faReact, faPython, faNodeJs, faHtml5, faCss3Alt, faJs } from '@fortawesome/free-brands-svg-icons'
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import { dom } from '@fortawesome/fontawesome-svg-core'
 dom.watch()
 
-library.add(faGithub, faLinkedinIn, faEnvelope, faTwitter)
+library.add(faGithub, faLinkedinIn, faEnvelope, faTwitter, faReact, faPython, faNodeJs, faHtml5, faCss3Alt, faJs)
 
 
 
@@ -41,6 +41,40 @@ export default function Home() {
                     </TitleDiv>        
                 </FlexDiv>
             </FadeIn>
+            {/* <div>
+                <h4>Skills</h4>
+                <div style={{display:'flex', justifyContent:'center'}}>
+                    <BtmIconDiv>
+                        <IconLabelDiv>
+                            <Icon alt="html5 logo" className="fab fa-html5"></Icon>
+                            <p>HTML5</p>
+                        </IconLabelDiv>
+                        <IconLabelDiv>
+                            <Icon alt="css3 logo" className="fab fa-css3-alt"></Icon>
+                            <p>CSS3</p>
+                        </IconLabelDiv>
+                        <IconLabelDiv>
+                            <Icon alt="javascript logo" className="fab fa-js"></Icon>
+                            <p>JavaScript</p>
+                        </IconLabelDiv>
+                    {/* </BtmIconDiv>
+                    <BtmIconDiv> */}
+                        {/* <IconLabelDiv>
+                            <Icon alt="react logo" className="fab fa-react"></Icon>
+                            <p>ReactJS</p>
+                        </IconLabelDiv>
+                        <IconLabelDiv>
+                            <Icon alt="python logo" className="fab fa-python"></Icon>
+                            <p>Python3</p>
+                        </IconLabelDiv>
+                        <IconLabelDiv>
+                            <Icon alt="node logo" className="fab fa-node-js"></Icon>
+                            <p>NodeJS</p>
+                        </IconLabelDiv>
+                    </BtmIconDiv>
+                    
+                </div>
+            </div> */}
             <Footer footerClass={''}/>
         </Container>
     )
@@ -104,6 +138,10 @@ let Link = styled.a`
     
 `;
 
+const IconLabelDiv = styled.div`
+    // margin: 4% auto;
+`;
+
 const Name = styled.h1`
     font-size: 4rem;
     // border: 1px solid red;
@@ -136,6 +174,13 @@ const IconDiv = styled.div`
     margin: 4% auto;
     display: flex;
     justify-content: center;
+`;
+const BtmIconDiv = styled.div`
+    // border: 1px solid red;
+    width: 55%;
+    margin: 4% auto;
+    display: flex;
+    justify-content: space-between;
 `;
 
 
