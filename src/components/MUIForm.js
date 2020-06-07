@@ -84,7 +84,6 @@ export default function FormPropsTextFields() {
       
       <Container>
         <TextField
-          isRequired={true}
           autoComplete="off"
           id="outlined-required"
           label="Name"
@@ -108,7 +107,7 @@ export default function FormPropsTextFields() {
           // defaultValue="Email"
           value={email.email}
           onChange={handleChange}
-          placholder="Email"
+          placeholder="Email"
           variant="outlined"
           style={{width:'100%'}}
           InputProps={{
@@ -135,6 +134,7 @@ export default function FormPropsTextFields() {
           }}
         />
          <Button
+        data-testid="submit"
         variant="contained"
         type="submit"
         color="primary"
