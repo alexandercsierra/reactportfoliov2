@@ -84,6 +84,7 @@ export default function FormPropsTextFields() {
       
       <Container>
         <TextField
+          required
           autoComplete="off"
           id="outlined-required"
           label="Name"
