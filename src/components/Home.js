@@ -28,7 +28,7 @@ export default function Home() {
                     <TitleDiv>
                         <Name>Alexander C Sierra</Name>
                         <Subtitle>
-                        <Typical steps={['Full Stack Web Developer', 2000, '3D Modeler', 1500, 'Experienced in React/Redux', 2000, 'Experienced in NodeJS/Express', 2000, 'Full Stack Web Developer', 1500]}
+                        <Typical steps={['Full Stack Web Developer', 2000, '3D Modeler', 1500, 'Experienced in React/Redux', 2000, 'Experienced in NodeJS/Express', 2000, 'Experienced in Python', 2000,'Full Stack Web Developer', 1500]}
                             loop={1}
                             wrapper="b"/>
                         </Subtitle>
