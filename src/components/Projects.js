@@ -15,6 +15,12 @@ export default function Projects() {
         <div>
             <Title>Projects</Title>
             <ProjectDiv>
+                <IconDiv>
+                    <Icon alt="single person" className="fas fa-user" ></Icon>
+                    <p style={{marginRight: '2%'}}>Solo Project</p>
+                    <Icon style={{fontSize: '2.2rem'}} alt="single person" className="fas fa-users" ></Icon>
+                    <p>Team Project</p>
+                </IconDiv>
                 {projectlist.map(proj=>{
                     return <Project key={proj.id} project={proj}/>
                 })}
@@ -69,6 +75,24 @@ const Button = styled.button`
 
 `;
 
+const Icon = styled.svg`
+    font-size: 2rem;
+    color: #f1f1f1;
+    margin: 0 20px;
+    @media(max-width: 760px){
+        font-size: 2.5rem;
+    }
+    &:hover{
+        color: #7f7f7f;
+    }
+`;
+
+const IconDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4%;
+`;
 
 const Title = styled.h1`
     margin: 4%;

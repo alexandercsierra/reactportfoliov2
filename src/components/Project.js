@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHtml5, faCss3Alt, faJs, faReact, faYoutube} from '@fortawesome/free-brands-svg-icons'
-import {faCube, faLink} from '@fortawesome/free-solid-svg-icons'
+import {faCube, faLink, faUser, faUsers} from '@fortawesome/free-solid-svg-icons'
 import { dom } from '@fortawesome/fontawesome-svg-core'
 
 dom.watch()
 
-library.add(faHtml5, faCss3Alt, faJs, faCube, faReact, faLink, faYoutube)
+library.add(faHtml5, faCss3Alt, faJs, faCube, faReact, faLink, faYoutube, faUser, faUsers)
 
 
 
@@ -16,7 +16,11 @@ export default function Project(props) {
     return (
         <Container key={project.id}>
             <LeftDiv>
-                <ProjectLink href={project.url} target="_blank"><Title>{project.title}</Title></ProjectLink>
+                <TitleDiv>
+                    <ProjectLink href={project.url} target="_blank"><Title>{project.title}</Title></ProjectLink>
+                    {project.solo && <Icon style={{margin: '0 20px', fontSize: '2rem'}} alt="single person" className="fas fa-user" ></Icon>}
+                    {!project.solo && <Icon style={{margin: '0 20px', fontSize: '2.2rem'}} alt="single person" className="fas fa-users" ></Icon>}
+                </TitleDiv>
                 <ImgDiv>
                 <ProjectLink href={project.url} target="_blank"><Img alt={project.alt} src={project.image}/></ProjectLink>
                 </ImgDiv>
@@ -24,11 +28,15 @@ export default function Project(props) {
             <RightDiv>
                 <TextDiv>
                     <p style={{width: '100%'}}>{project.desc}</p>
+                    
                 </TextDiv>
                 <LinkDiv>
                     <A href={project.repo} target="_blank"><Icon alt="github icon" className="fab fa-github-square" ></Icon></A>
                     <A href={project.url} target="_blank"><Icon alt="link to website" className="fas fa-link" ></Icon></A>
                     {project.title === "Characteristiq" && <A href={project.video} target="_blank"><Icon alt="youtube icon" className="fab fa-youtube" ></Icon></A>}
+                    {/* {project.solo && <Icon style={{margin: '0 20px'}} alt="single person" className="fas fa-user" ></Icon>}
+                    {!project.solo && <Icon style={{margin: '0 20px'}} alt="single person" className="fas fa-users" ></Icon>} */}
+                    
                 </LinkDiv>
             </RightDiv>
             
@@ -41,6 +49,12 @@ export default function Project(props) {
 const A = styled.a`
     margin 0 20px;
     
+`;
+
+const TitleDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 const ProjectLink = styled.a`
