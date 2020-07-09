@@ -178,11 +178,7 @@ const Carousel2= (props) => {
           <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
           </Carousel>
       </CaroDiv>
-      {/* <div style={{width: '100%', height: '100px'}}></div> */}
-      {/* <Title>About Me</Title> */}
-      <Para>In 2019, I took up 3D modelling as a hobby after competing a <a href="https://media-exp1.licdn.com/dms/image/C4D2DAQE8z3_UQqnWfg/profile-treasury-image-shrink_800_800/0?e=1594242000&v=beta&t=-PwYV6gLssWVJhLsqWM0bEtAqyh4XNEoiYStaIrgDr8" target="_blank"><SpanLink>65+ hour</SpanLink></a> Udemy course in <Span>Blender</Span>. I've found it a fun creative outlet and a great learning experience. In some ways it inspired me to <Span>really pursue web development</Span>, proving to myself that I could <Span>quickly pick up a new skill</Span> for the sake of it, remotely, with no extrinsic incentives. Thus far, my 3D models have been utilized for paid commission as well as contributing to my web development projects.</Para>
-
-                    {/* <Para>I find it so satisfying to have a problem, research the solution, then be able to immediately apply my new knowledge to fix a problem I couldn't solve 5 minutes ago. When not developing, I can be found playing trumpet in my community band, or frolicking in the snow.</Para> */}
+      <Para>In 2019, I took up 3D modelling as a hobby after competing a <a href="https://drive.google.com/file/d/1N5NmDESlUzYN9YXT3kYSJrokFuaylwX9/view?usp=sharing" target="_blank"><SpanLink>65+ hour</SpanLink></a> Udemy course in <Span>Blender</Span>. I've found it a fun creative outlet and a great learning experience. In some ways it inspired me to <Span>really pursue web development</Span>, proving to myself that I could <Span>quickly pick up a new skill</Span> for the sake of it, remotely, with no extrinsic incentives. Thus far, my 3D models have been utilized for paid commission as well as contributing to my web development projects.</Para>
       <Footer footerClass={'stickyFooter'}/>
     </Container>
   );
