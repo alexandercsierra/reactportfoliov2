@@ -14,7 +14,7 @@ library.add(faHtml5, faCss3Alt, faJs, faCube, faReact, faLink, faYoutube, faUser
 export default function Project(props) {
     const {project} = props;
     return (
-        <Container key={project.id}>
+        <Container>
             <LeftDiv>
                 <TitleDiv>
                     <ProjectLink href={project.url} target="_blank"><Title>{project.title}</Title></ProjectLink>
