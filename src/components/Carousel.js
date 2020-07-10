@@ -178,7 +178,7 @@ const Carousel2= (props) => {
           <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
           </Carousel>
       </CaroDiv>
-      <Para>In 2019, I took up 3D modelling as a hobby after competing a <a href="https://drive.google.com/file/d/1N5NmDESlUzYN9YXT3kYSJrokFuaylwX9/view?usp=sharing" target="_blank"><SpanLink>65+ hour</SpanLink></a> Udemy course in <Span>Blender</Span>. I've found it a fun creative outlet and a great learning experience. In some ways it inspired me to <Span>really pursue web development</Span>, proving to myself that I could <Span>quickly pick up a new skill</Span> for the sake of it, remotely, with no extrinsic incentives. Thus far, my 3D models have been utilized for paid commission as well as contributing to my web development projects.</Para>
+      <Para>In 2019, I took up 3D modeling as a hobby after competing a <a href="https://drive.google.com/file/d/1N5NmDESlUzYN9YXT3kYSJrokFuaylwX9/view?usp=sharing" target="_blank"><SpanLink>65+ hour</SpanLink></a> Udemy course in <Span>Blender</Span>. I've found it a fun creative outlet and a great learning experience. In some ways it inspired me to <Span>really pursue web development</Span>, proving to myself that I could <Span>quickly pick up a new skill</Span> for the sake of it, remotely, with no extrinsic incentives. Thus far, my 3D models have been utilized for paid commission as well as contributing to my web development projects.</Para>
       <Footer footerClass={'stickyFooter'}/>
     </Container>
   );
