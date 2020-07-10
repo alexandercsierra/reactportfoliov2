@@ -58,8 +58,8 @@ export default function About() {
                     </SkillDiv>
                 </AboutDiv>
                 </TopContainer>
-            </FadeIn>
             <Footer footerClass={'stickyFooter'}/>
+            </FadeIn>
         </div>
         
     )

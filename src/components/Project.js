@@ -17,14 +17,14 @@ export default function Project(props) {
         <Container>
             <LeftDiv>
                 <TitleDiv>
-                    <ProjectLink href={project.url} target="_blank"><Title>{project.title}
+                    <ProjectLink href={project.url} target="_blank" rel="noopener noreferrer"><Title>{project.title}
                     {project.solo && <Icon style={{margin: '0 20px', fontSize: '2rem'}} alt="single person" className="fas fa-user" ></Icon>}
                     {!project.solo && <Icon style={{margin: '0 20px', fontSize: '2.2rem'}} alt="single person" className="fas fa-users" ></Icon>}
                     </Title>
                     </ProjectLink>
                 </TitleDiv>
                 <ImgDiv>
-                <ProjectLink href={project.url} target="_blank"><Img alt={project.alt} src={project.image}/></ProjectLink>
+                <ProjectLink href={project.url} target="_blank" rel="noopener noreferrer"><Img alt={project.alt} src={project.image}/></ProjectLink>
                 </ImgDiv>
             </LeftDiv>
             <RightDiv>
@@ -33,9 +33,9 @@ export default function Project(props) {
                     
                 </TextDiv>
                 <LinkDiv>
-                    <A href={project.repo} target="_blank"><Icon alt="github icon" className="fab fa-github-square" ></Icon></A>
-                    <A href={project.url} target="_blank"><Icon alt="link to website" className="fas fa-link" ></Icon></A>
-                    {project.title === "Characteristiq" && <A href={project.video} target="_blank"><Icon alt="youtube icon" className="fab fa-youtube" ></Icon></A>}
+                    <A href={project.repo} target="_blank" rel="noopener noreferrer"><Icon alt="github icon" className="fab fa-github-square" ></Icon></A>
+                    <A href={project.url} target="_blank" rel="noopener noreferrer"><Icon alt="link to website" className="fas fa-link" ></Icon></A>
+                    {project.title === "Characteristiq" && <A href={project.video} target="_blank" rel="noopener noreferrer"><Icon alt="youtube icon" className="fab fa-youtube" ></Icon></A>}
                     {/* {project.solo && <Icon style={{margin: '0 20px'}} alt="single person" className="fas fa-user" ></Icon>}
                     {!project.solo && <Icon style={{margin: '0 20px'}} alt="single person" className="fas fa-users" ></Icon>} */}
                     
