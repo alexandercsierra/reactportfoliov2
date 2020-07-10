@@ -16,10 +16,22 @@ library.add(faGithubSquare, faLinkedin, faEnvelope, faArrowRight, faArrowLeft)
 
 export default function Contact() {
     const [isFlipped, setIsFlipped] = useState(false)
+    const [rotate, setRotate] = useState("")
+    const [isRotating, setIsRotating] = useState(false)
 
     const handleClick = e => {
         e.preventDefault();
         setIsFlipped(!isFlipped);
+    }
+
+    const handleRotation = () => {
+        setIsRotating(!isRotating)
+
+        if(!isRotating == true){
+            setRotate("rotate")
+        } else{
+            setRotate("")
+        }
     }
 
     return (
@@ -27,48 +39,18 @@ export default function Contact() {
         <Container>
             <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
                 <CardFront>
-                    {/* <FrontContainer>
-                        <ImgDiv>
-                            <Img src={logo} alt="logo of 3 computer keycaps, with initials ACS on them in purple and blue"/>
-                        </ImgDiv>
-                        
-                        <TextDiv>
-                            <Name>Alexander C Sierra</Name>
-                            <Title>Full Stack Web Developer</Title>
-                            <div>
-                            <IconDiv>
-                            <Link href="mailto:alexandercsierra@gmail.com" target="_blank"><Icon className="fas fa-envelope"></Icon></Link>
-                            <Link href="https://www.linkedin.com/in/alexander-sierra-b7519673/" target="_blank"><Icon alt="linked in logo" className="fab fa-linkedin-in"></Icon></Link>
-                            <Link href="https://github.com/alexandercsierra" target="_blank"><Icon alt="github logo" className="fab fa-github"></Icon></Link>
-                            <Link href="https://twitter.com/asierrawebdev" target="_blank"><Icon alt="twitter logo" className="fab fa-twitter"></Icon></Link>
-                        </IconDiv>
-                                
-                            </div>
-                        </TextDiv>
-                    </FrontContainer>
-                    <FlipDiv>
-                    <A onClick={handleClick}><Icon  alt="arrow to flip card" className="fas fa-arrow-right"></Icon></A>
-                    </FlipDiv> */}
                     <BackDiv>
                         <MUIForm/>
                     </BackDiv>
                     <FlipDiv>
-                        <A onClick={handleClick}><Icon alt="arrow to flip card" className="fas fa-arrow-right"></Icon></A>
+                        <A onClick={handleClick}><h2>over</h2><Icon alt="arrow to flip card" className="fas fa-arrow-right"></Icon></A>
                     </FlipDiv>
                 </CardFront>
          
                 <CardBack>
-                    {/* <BackDiv>
-                        <MUIForm/>
-                    </BackDiv>
-                    <FlipDiv>
-                        <A onClick={handleClick}><Icon alt="arrow to flip card" className="fas fa-arrow-left"></Icon></A>
-                    </FlipDiv> */}
-                    
-
                     <FrontContainer>
                         <ImgDiv>
-                            <Img src={logo} alt="logo of 3 computer keycaps, with initials ACS on them in purple and blue"/>
+                            <Img onClick={handleRotation} src={logo} className={rotate} alt="logo of 3 computer keycaps, with initials ACS on them in purple and blue"/>
                         </ImgDiv>
                         
                         <TextDiv>
@@ -76,17 +58,17 @@ export default function Contact() {
                             <Title>Full Stack Web Developer</Title>
                             <div>
                             <IconDiv>
-                            <Link href="mailto:alexandercsierra@gmail.com" target="_blank"><Icon className="fas fa-envelope"></Icon></Link>
-                            <Link href="https://www.linkedin.com/in/alexander-sierra-b7519673/" target="_blank"><Icon alt="linked in logo" className="fab fa-linkedin-in"></Icon></Link>
-                            <Link href="https://github.com/alexandercsierra" target="_blank"><Icon alt="github logo" className="fab fa-github"></Icon></Link>
-                            <Link href="https://twitter.com/asierrawebdev" target="_blank"><Icon alt="twitter logo" className="fab fa-twitter"></Icon></Link>
+                            <Link href="mailto:alexandercsierra@gmail.com" target="_blank" rel="noopener noreferrer"><Icon className="fas fa-envelope"></Icon></Link>
+                            <Link href="https://www.linkedin.com/in/alexander-sierra-b7519673/" target="_blank" rel="noopener noreferrer"><Icon alt="linked in logo" className="fab fa-linkedin-in"></Icon></Link>
+                            <Link href="https://github.com/alexandercsierra" target="_blank" rel="noopener noreferrer"><Icon alt="github logo" className="fab fa-github"></Icon></Link>
+                            <Link href="https://twitter.com/asierrawebdev" target="_blank" rel="noopener noreferrer"><Icon alt="twitter logo" className="fab fa-twitter"></Icon></Link>
                         </IconDiv>
                                 
                             </div>
                         </TextDiv>
                     </FrontContainer>
                     <FlipDiv>
-                    <A onClick={handleClick}><Icon  alt="arrow to flip card" className="fas fa-arrow-right"></Icon></A>
+                    <A onClick={handleClick}><h2>over</h2><Icon  alt="arrow to flip card" className="fas fa-arrow-right"></Icon></A>
                     </FlipDiv>
                   
                   
@@ -209,6 +191,7 @@ const ImgDiv = styled.div`
 `;
 
 const Img = styled.img`
+    cursor: pointer;
     @media(max-width: 1020px){
         width: 75%;
     }
@@ -216,6 +199,7 @@ const Img = styled.img`
         width: 55%;
         margin-top: 4%;
     }
+
 `;
 
 const TextDiv = styled.div`

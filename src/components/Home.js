@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import FadeIn from 'react-fade-in'
 import Footer from './Footer'
 import styled from 'styled-components'
@@ -17,13 +17,25 @@ library.add(faGithub, faLinkedinIn, faEnvelope, faTwitter, faReact, faPython, fa
 
 export default function Home() {
 
+    const [rotate, setRotate] = useState("")
+    const [isRotating, setIsRotating] = useState(false)
+
+    const handleRotation = () => {
+        setIsRotating(!isRotating)
+
+        if(!isRotating == true){
+            setRotate("rotate")
+        } else{
+            setRotate("")
+        }
+    }
     
     return (
         <Container>
             <FadeIn transitionDuration={1000}>
                 <FlexDiv>
                     <ImgDiv>
-                        <Img src={logo} alt="logo of 3 computer keycaps, with initials ACS on them in purple and blue"/>
+                        <Img onClick={handleRotation} className={rotate} src={logo} alt="logo of 3 computer keycaps, with initials ACS on them in purple and blue"/>
                     </ImgDiv>
                     <TitleDiv>
                         <Name>Alexander C Sierra</Name>
@@ -33,49 +45,15 @@ export default function Home() {
                             wrapper="b"/>
                         </Subtitle>
                         <IconDiv>
-                            <Link href="mailto:alexandercsierra@gmail.com" target="_blank"><Icon className="fas fa-envelope"></Icon></Link>
-                            <Link href="https://www.linkedin.com/in/alexander-sierra-b7519673/" target="_blank"><Icon alt="linked in logo" className="fab fa-linkedin-in"></Icon></Link>
-                            <Link href="https://github.com/alexandercsierra" target="_blank"><Icon alt="github logo" className="fab fa-github"></Icon></Link>
-                            <Link href="https://twitter.com/asierrawebdev" target="_blank"><Icon alt="twitter logo" className="fab fa-twitter"></Icon></Link>
+                            <Link href="mailto:alexandercsierra@gmail.com" target="_blank" rel="noopener noreferrer"><Icon className="fas fa-envelope"></Icon></Link>
+                            <Link href="https://www.linkedin.com/in/alexander-sierra-b7519673/" target="_blank" rel="noopener noreferrer"><Icon alt="linked in logo" className="fab fa-linkedin-in"></Icon></Link>
+                            <Link href="https://github.com/alexandercsierra" target="_blank" rel="noopener noreferrer"><Icon alt="github logo" className="fab fa-github"></Icon></Link>
+                            <Link href="https://twitter.com/asierrawebdev" target="_blank" rel="noopener noreferrer"><Icon alt="twitter logo" className="fab fa-twitter"></Icon></Link>
                         </IconDiv>
                     </TitleDiv>        
                 </FlexDiv>
-            </FadeIn>
-            {/* <div>
-                <h4>Skills</h4>
-                <div style={{display:'flex', justifyContent:'center'}}>
-                    <BtmIconDiv>
-                        <IconLabelDiv>
-                            <Icon alt="html5 logo" className="fab fa-html5"></Icon>
-                            <p>HTML5</p>
-                        </IconLabelDiv>
-                        <IconLabelDiv>
-                            <Icon alt="css3 logo" className="fab fa-css3-alt"></Icon>
-                            <p>CSS3</p>
-                        </IconLabelDiv>
-                        <IconLabelDiv>
-                            <Icon alt="javascript logo" className="fab fa-js"></Icon>
-                            <p>JavaScript</p>
-                        </IconLabelDiv>
-                    {/* </BtmIconDiv>
-                    <BtmIconDiv> */}
-                        {/* <IconLabelDiv>
-                            <Icon alt="react logo" className="fab fa-react"></Icon>
-                            <p>ReactJS</p>
-                        </IconLabelDiv>
-                        <IconLabelDiv>
-                            <Icon alt="python logo" className="fab fa-python"></Icon>
-                            <p>Python3</p>
-                        </IconLabelDiv>
-                        <IconLabelDiv>
-                            <Icon alt="node logo" className="fab fa-node-js"></Icon>
-                            <p>NodeJS</p>
-                        </IconLabelDiv>
-                    </BtmIconDiv>
-                    
-                </div>
-            </div> */}
             <Footer footerClass={''}/>
+            </FadeIn>
         </Container>
     )
 }
@@ -203,5 +181,6 @@ const ImgDiv = styled.div`
 
 const Img = styled.img`
     width: 100%;
+    cursor: pointer;
 `;
 
