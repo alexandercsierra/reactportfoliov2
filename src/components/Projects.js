@@ -18,11 +18,12 @@ export default function Projects() {
     const [projects, setProjects] = useState(featured);
     const [showSettings, setShowSettings] = useState(false)
     const [currentFilter, setCurrentFilter] = useState('featured')
-    const [iconColors, setIconColors] = useState({
-        featured: '#4E72D4',
-        solo: '#F1F1F1',
-        team: '#F1F1F1',
-        all: '#F1F1F1'
+
+    const [iconClasses, setIconClasses] = useState({
+        featured: 'activeIcon',
+        solo: 'inactiveIcon',
+        team: 'inactiveIcon',
+        all: 'inactiveIcon'
     })
     
 
@@ -32,39 +33,53 @@ export default function Projects() {
         
         if(filter === "all"){
             setProjects(projectlist)
-            let newColors = {
-                featured: '#F1F1F1',
-                solo: '#F1F1F1',
-                team: '#F1F1F1',
-                all: '#4E72D4'
+
+            let newClasses = {
+                featured: 'inactiveIcon',
+                solo: 'inactiveIcon',
+                team: 'inactiveIcon',
+                all: 'activeIcon'
             }
-            setIconColors(newColors)
+
+
+            setIconClasses(newClasses)
         } else if (filter === "team"){
             setProjects(projectlist.filter(proj => proj.solo === false))
-            let newColors = {
-                featured: '#F1F1F1',
-                solo: '#F1F1F1',
-                team: '#4E72D4',
-                all: '#F1F1F1'
+
+            let newClasses = {
+                featured: 'inactiveIcon',
+                solo: 'inactiveIcon',
+                team: 'activeIcon',
+                all: 'inactiveIcon'
             }
-            setIconColors(newColors)
+
+
+            setIconClasses(newClasses)
         } else{
             if(filter === "solo"){
-                let newColors = {
-                    featured: '#F1F1F1',
-                    solo: '#4E72D4',
-                    team: '#F1F1F1',
-                    all: '#F1F1F1'
+
+                let newClasses = {
+                    featured: 'inactiveIcon',
+                    solo: 'activeIcon',
+                    team: 'inactiveIcon',
+                    all: 'inactiveIcon'
                 }
-                setIconColors(newColors)
+    
+    
+                setIconClasses(newClasses)
+
+
             } else if(filter == "featured") {
-                let newColors = {
-                    featured: '#4E72D4',
-                    solo: '#F1F1F1',
-                    team: '#F1F1F1',
-                    all: '#F1F1F1'
+
+                let newClasses = {
+                    featured: 'activeIcon',
+                    solo: 'inactiveIcon',
+                    team: 'inactiveIcon',
+                    all: 'inactiveIcon'
                 }
-                setIconColors(newColors)
+    
+    
+                setIconClasses(newClasses)
             }
             setProjects(projectlist.filter(proj => proj[filter] === true))
         }
@@ -82,8 +97,9 @@ export default function Projects() {
 
             <Title onClick={()=>console.log('hello')}>Projects</Title>
 
-            <FilterDiv onClick={()=>setShowSettings(!showSettings)}>
-                <Icon alt="cog" className="fas fa-cog"></Icon>
+            <FilterDiv style={{display: 'flex'}} onClick={()=>setShowSettings(!showSettings)}>
+                <Settings>Display Settings</Settings>
+                <Icon alt="cog" className="fas fa-cog inactiveIcon"></Icon>
             </FilterDiv>
 
             {showSettings && <FilterDiv style={{background: '#1E1F2C', padding: '2%'}}>
@@ -91,28 +107,22 @@ export default function Projects() {
                     <h5>Filter by type</h5>
 
                     <IconDiv>
-                        <div onClick={()=>{
-                            filterProjects('featured')
-                        }} style={{display: 'flex', flexDirection: 'column', height: '100px', width: '100px', alignItems: 'center', justifyContent: 'center'}}>
-                            <Icon alt="single person" className='fas fa-star' style={{color: iconColors.featured}}></Icon>
-
-                        <p style={{marginRight: '2%'}}>Featured</p>
-                        </div>
-                        <div onClick={()=>{
-                            filterProjects('solo')    
-                        }} style={{display: 'flex', flexDirection: 'column', height: '100px', width: '100px', alignItems: 'center', justifyContent: 'center'}}>
-                            <Icon alt="single person" className='fas fa-user' style={{color: iconColors.solo}}></Icon>
-
-                        <p style={{marginRight: '2%'}}>Solo</p>
-                        </div>
-                        <div onClick={()=>filterProjects('team')} style={{display: 'flex', flexDirection: 'column', height: '100px', width: '100px', alignItems: 'center', justifyContent: 'center'}}>
-                            <Icon style={{fontSize: '2.2rem'}} alt="single person" className="fas fa-users" style={{color: iconColors.team}}></Icon>
+                        <FilterWrapper onClick={()=>filterProjects('featured')}>
+                            <Icon alt="star" className={`fas fa-star ${iconClasses.featured}`} ></Icon>
+                            <p style={{marginRight: '2%'}}>Featured</p>
+                        </FilterWrapper>
+                        <FilterWrapper onClick={()=>filterProjects('solo')}>
+                            <Icon alt="single person" className={`fas fa-user ${iconClasses.solo}`}></Icon>
+                            <p style={{marginRight: '2%'}}>Solo</p>    
+                        </FilterWrapper>
+                        <FilterWrapper onClick={()=>filterProjects('team')}>
+                            <Icon style={{fontSize: '2.2rem'}} alt="group of people" className={`fas fa-users ${iconClasses.team}`}></Icon>
                             <p>Team</p>
-                        </div>
-                        <div onClick={()=>filterProjects('all')} style={{display: 'flex', flexDirection: 'column', height: '100px', width: '100px', alignItems: 'center', justifyContent: 'center'}}>
-                            <Icon style={{fontSize: '2rem'}} alt="single person" className="fas fa-user-plus" style={{color: iconColors.all}}></Icon>
+                        </FilterWrapper>
+                        <FilterWrapper onClick={()=>filterProjects('all')}>
+                            <Icon style={{fontSize: '2rem'}} alt="person with a plus symbol" className={`fas fa-user-plus ${iconClasses.all}`}></Icon>
                             <p>All</p>
-                        </div>
+                        </FilterWrapper>
                     </IconDiv>
             </FilterDiv>}
             <ProjectDiv>
@@ -127,9 +137,26 @@ export default function Projects() {
     )
 }
 
+const Settings = styled.p`
+    @media(max-width: 960px){
+        display: none
+    }
+`;
+
 const FilterDiv = styled.div`
     align-self: flex-end;
 `;
+
+const FilterWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+`;
+
+
 
 const Button = styled.button`
     color: #f1f1f1;
@@ -177,13 +204,10 @@ const Button = styled.button`
 
 const Icon = styled.svg`
     font-size: 2rem;
-    color: #f1f1f1;
     margin: 0 20px;
+    cursor: pointer;
     @media(max-width: 760px){
         font-size: 2.5rem;
-    }
-    &:hover{
-        color: #7f7f7f;
     }
 `;
 
@@ -203,8 +227,5 @@ const ProjectDiv = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    // margin-bottom: 5%;
-    
     width: 100%;
-    // height: 200px;
 `;

@@ -136,8 +136,16 @@ code {
   color: #4E72D4;
 }
 
+.activeIcon:hover{
+  color: #7f7f7f;
+}
+
 .inactiveIcon{
   color: #f1f1f1;
+}
+
+.inactiveIcon:hover{
+  color: #7f7f7f;
 }
 
 .rotate {
