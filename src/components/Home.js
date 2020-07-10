@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import FadeIn from 'react-fade-in'
 import Footer from './Footer'
 import styled from 'styled-components'
@@ -17,25 +17,13 @@ library.add(faGithub, faLinkedinIn, faEnvelope, faTwitter, faReact, faPython, fa
 
 export default function Home() {
 
-    const [rotate, setRotate] = useState("")
-    const [isRotating, setIsRotating] = useState(false)
-
-    const handleRotation = () => {
-        setIsRotating(!isRotating)
-
-        if(!isRotating == true){
-            setRotate("rotate")
-        } else{
-            setRotate("")
-        }
-    }
     
     return (
         <Container>
             <FadeIn transitionDuration={1000}>
                 <FlexDiv>
                     <ImgDiv>
-                        <Img onClick={handleRotation} className={rotate} src={logo} alt="logo of 3 computer keycaps, with initials ACS on them in purple and blue"/>
+                        <Img src={logo} alt="logo of 3 computer keycaps, with initials ACS on them in purple and blue"/>
                     </ImgDiv>
                     <TitleDiv>
                         <Name>Alexander C Sierra</Name>
@@ -181,6 +169,5 @@ const ImgDiv = styled.div`
 
 const Img = styled.img`
     width: 100%;
-    cursor: pointer;
 `;
 
