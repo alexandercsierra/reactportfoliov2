@@ -83,6 +83,7 @@ export default function FormPropsTextFields() {
       
       
       <Container>
+        <Title>Contact Me</Title>
         <TextField
           required
           autoComplete="off"
@@ -158,7 +159,7 @@ export default function FormPropsTextFields() {
 
 
 const Container = styled.div`
-  margin: 10% auto;
+  margin: 5% auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -190,5 +191,10 @@ const Container = styled.div`
 
 `;
 
+const Title = styled.h1`
+  @media(max-width: 1020px){
+    // font-size: 1rem;
+  }
+`;
 
 

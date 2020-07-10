@@ -27,6 +27,45 @@ export default function Contact() {
         <Container>
             <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
                 <CardFront>
+                    {/* <FrontContainer>
+                        <ImgDiv>
+                            <Img src={logo} alt="logo of 3 computer keycaps, with initials ACS on them in purple and blue"/>
+                        </ImgDiv>
+                        
+                        <TextDiv>
+                            <Name>Alexander C Sierra</Name>
+                            <Title>Full Stack Web Developer</Title>
+                            <div>
+                            <IconDiv>
+                            <Link href="mailto:alexandercsierra@gmail.com" target="_blank"><Icon className="fas fa-envelope"></Icon></Link>
+                            <Link href="https://www.linkedin.com/in/alexander-sierra-b7519673/" target="_blank"><Icon alt="linked in logo" className="fab fa-linkedin-in"></Icon></Link>
+                            <Link href="https://github.com/alexandercsierra" target="_blank"><Icon alt="github logo" className="fab fa-github"></Icon></Link>
+                            <Link href="https://twitter.com/asierrawebdev" target="_blank"><Icon alt="twitter logo" className="fab fa-twitter"></Icon></Link>
+                        </IconDiv>
+                                
+                            </div>
+                        </TextDiv>
+                    </FrontContainer>
+                    <FlipDiv>
+                    <A onClick={handleClick}><Icon  alt="arrow to flip card" className="fas fa-arrow-right"></Icon></A>
+                    </FlipDiv> */}
+                    <BackDiv>
+                        <MUIForm/>
+                    </BackDiv>
+                    <FlipDiv>
+                        <A onClick={handleClick}><Icon alt="arrow to flip card" className="fas fa-arrow-right"></Icon></A>
+                    </FlipDiv>
+                </CardFront>
+         
+                <CardBack>
+                    {/* <BackDiv>
+                        <MUIForm/>
+                    </BackDiv>
+                    <FlipDiv>
+                        <A onClick={handleClick}><Icon alt="arrow to flip card" className="fas fa-arrow-left"></Icon></A>
+                    </FlipDiv> */}
+                    
+
                     <FrontContainer>
                         <ImgDiv>
                             <Img src={logo} alt="logo of 3 computer keycaps, with initials ACS on them in purple and blue"/>
@@ -49,16 +88,6 @@ export default function Contact() {
                     <FlipDiv>
                     <A onClick={handleClick}><Icon  alt="arrow to flip card" className="fas fa-arrow-right"></Icon></A>
                     </FlipDiv>
-                </CardFront>
-         
-                <CardBack>
-                    <BackDiv>
-                        <MUIForm/>
-                    </BackDiv>
-                    <FlipDiv>
-                        <A onClick={handleClick}><Icon alt="arrow to flip card" className="fas fa-arrow-left"></Icon></A>
-                    </FlipDiv>
-                    
                   
                   
                 </CardBack>
@@ -229,17 +258,17 @@ const CardFront = styled.div`
 
     @media(max-width:1400px){
         width: 923px;
-        height: 500px;
+        height: 550px;
     }
 
     @media(max-width:1160px){
         width: 923px;
-        height: 500px;
+        height: 535px;
     }
 
     @media(max-width:1020px){
         width: 738px;
-        height: 420px;
+        height: 520px;
     }
     @media(max-width:740px){
         width: 500px;
@@ -251,7 +280,7 @@ const CardFront = styled.div`
     }
     @media(max-width:400px){
         width: 290px;
-        height: 435px;
+        height: 460px;
     }
     
 
@@ -276,17 +305,17 @@ const CardBack = styled.div`
 
     @media(max-width:1400px){
         width: 923px;
-        height: 500px;
+        height: 550px;
     }
 
     @media(max-width:1160px){
         width: 923px;
-        height: 500px;
+        height: 535px;
     }
 
     @media(max-width:1020px){
         width: 738px;
-        height: 420px;
+        height: 520px;
     }
     @media(max-width:740px){
         width: 500px;
@@ -298,7 +327,7 @@ const CardBack = styled.div`
     }
     @media(max-width:400px){
         width: 290px;
-        height: 435px;
+        height: 460px;
     }
     // @media only screen 
     // and (min-device-width: 640px) 

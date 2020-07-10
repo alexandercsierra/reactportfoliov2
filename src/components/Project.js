@@ -17,9 +17,11 @@ export default function Project(props) {
         <Container>
             <LeftDiv>
                 <TitleDiv>
-                    <ProjectLink href={project.url} target="_blank"><Title>{project.title}</Title></ProjectLink>
+                    <ProjectLink href={project.url} target="_blank"><Title>{project.title}
                     {project.solo && <Icon style={{margin: '0 20px', fontSize: '2rem'}} alt="single person" className="fas fa-user" ></Icon>}
                     {!project.solo && <Icon style={{margin: '0 20px', fontSize: '2.2rem'}} alt="single person" className="fas fa-users" ></Icon>}
+                    </Title>
+                    </ProjectLink>
                 </TitleDiv>
                 <ImgDiv>
                 <ProjectLink href={project.url} target="_blank"><Img alt={project.alt} src={project.image}/></ProjectLink>
