@@ -132,3 +132,10 @@ code {
   color: #f1f1f1;
 }
 
+.activeIcon{
+  color: #4E72D4;
+}
+
+.inactiveIcon{
+  color: #f1f1f1;
+}

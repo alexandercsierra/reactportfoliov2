@@ -1,10 +1,76 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Footer from './Footer'
 import styled from 'styled-components'
 import {projectlist} from '../data/projectlist'
 import Project from './Project'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import {faUser, faUsers, faUserPlus, faCog, faStar} from '@fortawesome/free-solid-svg-icons'
+import { dom } from '@fortawesome/fontawesome-svg-core'
+
+dom.watch()
+
+library.add(faUser, faUsers, faUserPlus, faCog, faStar)
+
 
 export default function Projects() {
+
+    const featured = projectlist.filter(proj=>proj.featured === true)
+    const [projects, setProjects] = useState(featured);
+    const [showSettings, setShowSettings] = useState(false)
+    const [currentFilter, setCurrentFilter] = useState('featured')
+    const [iconColors, setIconColors] = useState({
+        featured: '#4E72D4',
+        solo: '#F1F1F1',
+        team: '#F1F1F1',
+        all: '#F1F1F1'
+    })
+    
+
+
+    const filterProjects = (filter) => {
+        setCurrentFilter(filter)
+        
+        if(filter === "all"){
+            setProjects(projectlist)
+            let newColors = {
+                featured: '#F1F1F1',
+                solo: '#F1F1F1',
+                team: '#F1F1F1',
+                all: '#4E72D4'
+            }
+            setIconColors(newColors)
+        } else if (filter === "team"){
+            setProjects(projectlist.filter(proj => proj.solo === false))
+            let newColors = {
+                featured: '#F1F1F1',
+                solo: '#F1F1F1',
+                team: '#4E72D4',
+                all: '#F1F1F1'
+            }
+            setIconColors(newColors)
+        } else{
+            if(filter === "solo"){
+                let newColors = {
+                    featured: '#F1F1F1',
+                    solo: '#4E72D4',
+                    team: '#F1F1F1',
+                    all: '#F1F1F1'
+                }
+                setIconColors(newColors)
+            } else if(filter == "featured") {
+                let newColors = {
+                    featured: '#4E72D4',
+                    solo: '#F1F1F1',
+                    team: '#F1F1F1',
+                    all: '#F1F1F1'
+                }
+                setIconColors(newColors)
+            }
+            setProjects(projectlist.filter(proj => proj[filter] === true))
+        }
+
+        setShowSettings(false)
+    }
 
 
     const scrollToTop = () => {
@@ -12,16 +78,46 @@ export default function Projects() {
     };
 
     return (
-        <div>
-            <Title>Projects</Title>
+        <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
+
+            <Title onClick={()=>console.log('hello')}>Projects</Title>
+
+            <FilterDiv onClick={()=>setShowSettings(!showSettings)}>
+                <Icon alt="cog" className="fas fa-cog"></Icon>
+            </FilterDiv>
+
+            {showSettings && <FilterDiv style={{background: '#1E1F2C', padding: '2%'}}>
+
+                    <h5>Filter by type</h5>
+
+                    <IconDiv>
+                        <div onClick={()=>{
+                            filterProjects('featured')
+                        }} style={{display: 'flex', flexDirection: 'column', height: '100px', width: '100px', alignItems: 'center', justifyContent: 'center'}}>
+                            <Icon alt="single person" className='fas fa-star' style={{color: iconColors.featured}}></Icon>
+
+                        <p style={{marginRight: '2%'}}>Featured</p>
+                        </div>
+                        <div onClick={()=>{
+                            filterProjects('solo')    
+                        }} style={{display: 'flex', flexDirection: 'column', height: '100px', width: '100px', alignItems: 'center', justifyContent: 'center'}}>
+                            <Icon alt="single person" className='fas fa-user' style={{color: iconColors.solo}}></Icon>
+
+                        <p style={{marginRight: '2%'}}>Solo</p>
+                        </div>
+                        <div onClick={()=>filterProjects('team')} style={{display: 'flex', flexDirection: 'column', height: '100px', width: '100px', alignItems: 'center', justifyContent: 'center'}}>
+                            <Icon style={{fontSize: '2.2rem'}} alt="single person" className="fas fa-users" style={{color: iconColors.team}}></Icon>
+                            <p>Team</p>
+                        </div>
+                        <div onClick={()=>filterProjects('all')} style={{display: 'flex', flexDirection: 'column', height: '100px', width: '100px', alignItems: 'center', justifyContent: 'center'}}>
+                            <Icon style={{fontSize: '2rem'}} alt="single person" className="fas fa-user-plus" style={{color: iconColors.all}}></Icon>
+                            <p>All</p>
+                        </div>
+                    </IconDiv>
+            </FilterDiv>}
             <ProjectDiv>
-                <IconDiv>
-                    <Icon alt="single person" className="fas fa-user" ></Icon>
-                    <p style={{marginRight: '2%'}}>Solo Project</p>
-                    <Icon style={{fontSize: '2.2rem'}} alt="single person" className="fas fa-users" ></Icon>
-                    <p>Team Project</p>
-                </IconDiv>
-                {projectlist.map(proj=>{
+                
+                {projects && projects.map(proj=>{
                     return <Project key={proj.id} project={proj}/>
                 })}
             </ProjectDiv>
@@ -30,6 +126,10 @@ export default function Projects() {
         </div>
     )
 }
+
+const FilterDiv = styled.div`
+    align-self: flex-end;
+`;
 
 const Button = styled.button`
     color: #f1f1f1;
