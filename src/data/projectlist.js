@@ -12,9 +12,22 @@ import d8picker from '../imgs/d8picker.png'
 import sleuth from '../imgs/sleuth.png'
 import ac from '../imgs/animalcrossing.png'
 import gameoflife from '../imgs/gameoflife.png'
+import extrapickles from '../imgs/extrapickles.png'
 
 
 let obj = [
+    {
+        id: 0,
+        letter: "E",
+        title: "Extra Pickles",
+        image: extrapickles,
+        alt: "green background with white text and a picture of a woman eating a burger",
+        desc: "Never wonder what your friends and family order from a restaurant again. Sign up, create lists with your usual order at a given restaurant, then add friends. Friends can see what you've added to your lists, so you never have to guess if they like extra pickles. The project is a current work in progress, built using ReactJS and NodeJS",
+        repo: "https://github.com/alexandercsierra/preferences",
+        url: "https://extrapickles.vercel.app/",
+        solo: true,
+        featured: true
+    },
     {
         id: 1,
         letter: "D",
@@ -73,7 +86,7 @@ let obj = [
         repo: "https://github.com/alexandercsierra/back-end?organization=alexandercsierra&organization=alexandercsierra",
         url: "https://wunderlistbuildweek.herokuapp.com/",
         solo: false,
-        featured: true
+        featured: false
     },
     {
         id: 6,
