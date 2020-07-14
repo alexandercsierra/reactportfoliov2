@@ -33,7 +33,7 @@ export default function Project(props) {
                     
                 </TextDiv>
                 <LinkDiv>
-                    <A href={project.repo} target="_blank" rel="noopener noreferrer"><Icon alt="github icon" className="fab fa-github-square" ></Icon></A>
+                    {project.title !== "Extra Pickles" && <A href={project.repo} target="_blank" rel="noopener noreferrer"><Icon alt="github icon" className="fab fa-github-square" ></Icon></A>}
                     <A href={project.url} target="_blank" rel="noopener noreferrer"><Icon alt="link to website" className="fas fa-link" ></Icon></A>
                     {project.title === "Characteristiq" && <A href={project.video} target="_blank" rel="noopener noreferrer"><Icon alt="youtube icon" className="fab fa-youtube" ></Icon></A>}
                     {/* {project.solo && <Icon style={{margin: '0 20px'}} alt="single person" className="fas fa-user" ></Icon>}
