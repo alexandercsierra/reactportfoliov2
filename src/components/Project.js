@@ -4,6 +4,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHtml5, faCss3Alt, faJs, faReact, faYoutube} from '@fortawesome/free-brands-svg-icons'
 import {faCube, faLink, faUser, faUsers} from '@fortawesome/free-solid-svg-icons'
 import { dom } from '@fortawesome/fontawesome-svg-core'
+import {Link} from 'react-router-dom'
 
 dom.watch()
 
@@ -33,7 +34,11 @@ export default function Project(props) {
                     
                 </TextDiv>
                 <LinkDiv>
+                
                     {project.title !== "Extra Pickles" && <A href={project.repo} target="_blank" rel="noopener noreferrer"><Icon alt="github icon" className="fab fa-github-square" ></Icon></A>}
+
+                    <Link to={`/projects/${project.title}`}><Icon alt="github icon" className="fab fa-github-square" ></Icon></Link>
+
                     <A href={project.url} target="_blank" rel="noopener noreferrer"><Icon alt="link to website" className="fas fa-link" ></Icon></A>
                     {project.title === "Characteristiq" && <A href={project.video} target="_blank" rel="noopener noreferrer"><Icon alt="youtube icon" className="fab fa-youtube" ></Icon></A>}
                     {/* {project.solo && <Icon style={{margin: '0 20px'}} alt="single person" className="fas fa-user" ></Icon>}

@@ -26,7 +26,8 @@ let obj = [
         repo: "https://github.com/alexandercsierra/preferences",
         url: "https://extrapickles.vercel.app/",
         solo: true,
-        featured: true
+        featured: true,
+        moreInfo: true
     },
     {
         id: 1,
