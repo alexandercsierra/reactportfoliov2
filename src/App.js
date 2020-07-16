@@ -7,6 +7,7 @@ import Projects from './components/Projects'
 import Contact from './components/Contact'
 import About from './components/About'
 import Carousel from './components/Carousel'
+import MoreInfo from './components/MoreInfo'
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
           
         <Route exact path='/'><Home/></Route>
         <Route path='/about'><About/></Route>
-        <Route path='/projects'><Projects/></Route>
+        <Route exact path='/projects'><Projects/></Route>
+        <Route path='/projects/:name'><MoreInfo/></Route>
         <Route path='/3dmodels'><Carousel/></Route>
         <Route path='/contact'><Contact/></Route>
         
