@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHtml5, faCss3Alt, faJs, faReact, faYoutube} from '@fortawesome/free-brands-svg-icons'
-import {faCube, faLink, faUser, faUsers} from '@fortawesome/free-solid-svg-icons'
+import {faCube, faLink, faUser, faUsers, faInfoCircle} from '@fortawesome/free-solid-svg-icons'
 import { dom } from '@fortawesome/fontawesome-svg-core'
 import {Link} from 'react-router-dom'
 
 dom.watch()
 
-library.add(faHtml5, faCss3Alt, faJs, faCube, faReact, faLink, faYoutube, faUser, faUsers)
+library.add(faHtml5, faCss3Alt, faJs, faCube, faReact, faLink, faYoutube, faUser, faUsers, faInfoCircle)
 
 
 
@@ -37,7 +37,7 @@ export default function Project(props) {
                 
                     {project.title !== "Extra Pickles" && <A href={project.repo} target="_blank" rel="noopener noreferrer"><Icon alt="github icon" className="fab fa-github-square" ></Icon></A>}
 
-                    <Link to={`/projects/${project.title}`}><Icon alt="github icon" className="fab fa-github-square" ></Icon></Link>
+                    {project.title === "Extra Pickles" && <Link to={`/projects/${project.title}`}><Icon alt="circle with an i inside" className="fas fa-info-circle" ></Icon></Link>}
 
                     <A href={project.url} target="_blank" rel="noopener noreferrer"><Icon alt="link to website" className="fas fa-link" ></Icon></A>
                     {project.title === "Characteristiq" && <A href={project.video} target="_blank" rel="noopener noreferrer"><Icon alt="youtube icon" className="fab fa-youtube" ></Icon></A>}
