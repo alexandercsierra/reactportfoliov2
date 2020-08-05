@@ -10,4 +10,4 @@ https://www.alexandercsierra.com
 |React Router|
 |Axios|
 |Material UI |
-|Reactstrap/Boostrap|
+|Reactstrap/Bootstrap|
