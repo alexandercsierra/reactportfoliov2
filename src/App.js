@@ -8,7 +8,7 @@ import Contact from './components/Contact'
 import About from './components/About'
 import Carousel from './components/Carousel'
 import MoreInfo from './components/MoreInfo'
-
+import Learning from './components/Learning'
 
 function App() {
 
@@ -21,6 +21,7 @@ function App() {
         <Route exact path='/'><Home/></Route>
         <Route path='/about'><About/></Route>
         <Route exact path='/projects'><Projects/></Route>
+        <Route exact path='/learning'><Learning/></Route>
         <Route path='/projects/:name'><MoreInfo/></Route>
         <Route path='/3dmodels'><Carousel/></Route>
         <Route path='/contact'><Contact/></Route>
