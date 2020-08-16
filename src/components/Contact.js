@@ -49,8 +49,9 @@ export default function Contact() {
          
                 <CardBack>
                     <FrontContainer>
-                        <ImgDiv>
-                            <Img onClick={handleRotation} src={logo} className={rotate} alt="logo of 3 computer keycaps, with initials ACS on them in purple and blue"/>
+                        <ImgDiv onClick={handleRotation}>
+                            <Img src={logo} className={rotate} alt="logo of 3 computer keycaps, with initials ACS on them in purple and blue"/>
+                            <p>click me</p>
                         </ImgDiv>
                         
                         <TextDiv>
@@ -134,15 +135,19 @@ const Container = styled.div`
     @media(max-width:1020px){
         margin-top: 20%;
     }
-    @media(max-width:740px){
-        margin-top: 4%;
+    @media(max-width: 970px){
+        margin-top: 0;
+        padding-top: 15vh;
     }
-    @media(max-width:570px){
-        margin-top: 20%;
-    }
-    @media(max-width:400px){
-        margin-top: 15%;
-    }
+    // @media(max-width:740px){
+    //     margin-top: 4%;
+    // }
+    // @media(max-width:570px){
+    //     margin-top: 20%;
+    // }
+    // @media(max-width:400px){
+    //     margin-top: 15%;
+    // }
 `;
 
 const FrontContainer = styled.div`
@@ -181,8 +186,10 @@ const ImgDiv = styled.div`
     width: 50%;
     // border: 1px solid blue;
     display: flex;
+    cursor: pointer;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     @media(max-width: 740px){
         width: 100%;
     }
@@ -191,7 +198,7 @@ const ImgDiv = styled.div`
 `;
 
 const Img = styled.img`
-    cursor: pointer;
+    
     @media(max-width: 1020px){
         width: 75%;
     }

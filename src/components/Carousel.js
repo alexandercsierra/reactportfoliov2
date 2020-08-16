@@ -115,12 +115,16 @@ const Container = styled.div`
   @media(max-width: 1200px){
     margin-top: 8%;
   }
-  @media(max-width: 860px){
-    margin-top: 12%;
-  }
-  @media(max-width: 540px){
-    margin-top: 20%;
-  }
+  @media(max-width: 970px){
+    margin-top: 0;
+    padding-top: 15vh;
+}
+  // @media(max-width: 860px){
+  //   margin-top: 12%;
+  // }
+  // @media(max-width: 540px){
+  //   margin-top: 20%;
+  // }
 `;
 
 

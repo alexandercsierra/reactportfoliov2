@@ -13,21 +13,32 @@ library.add(faUser, faUsers, faUserPlus, faCog, faStar)
 
 
 export default function Projects() {
+    const iconDefaults = {
+        featured: 'inactiveIcon',
+        solo: 'inactiveIcon',
+        team: 'inactiveIcon',
+        all: 'inactiveIcon'
+    }
 
     const featured = projectlist.filter(proj=>proj.featured === true)
     const [projects, setProjects] = useState(featured);
     const [showSettings, setShowSettings] = useState(false)
     const [currentFilter, setCurrentFilter] = useState('featured')
 
-    const [iconClasses, setIconClasses] = useState({
-        featured: 'activeIcon',
-        solo: 'inactiveIcon',
-        team: 'inactiveIcon',
-        all: 'inactiveIcon'
-    })
+    const [iconClasses, setIconClasses] = useState({...iconDefaults, featured: 'activeIcon'})
     
 
-
+    const changeClasses = (btn)=>{
+        if(iconClasses[btn] === "inactiveIcon"){
+            let newClasses = {...iconDefaults}
+            newClasses[btn] = 'activeIcon'
+            setIconClasses(()=>newClasses)
+        } else if(iconClasses[btn]==="activeIcon"){
+            let newClasses = {...iconDefaults}
+            newClasses[btn] = 'inactiveIcon'
+            setIconClasses(newClasses)
+        }
+    }
     const filterProjects = (filter) => {
         setCurrentFilter(filter)
         
@@ -84,7 +95,7 @@ export default function Projects() {
             setProjects(projectlist.filter(proj => proj[filter] === true))
         }
 
-        setShowSettings(false)
+        // setShowSettings(false)
     }
 
 
@@ -93,7 +104,7 @@ export default function Projects() {
     };
 
     return (
-        <div style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
+        <Container style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
 
             <Title onClick={()=>console.log('hello')}>Projects</Title>
 
@@ -107,20 +118,26 @@ export default function Projects() {
                     <h5>Filter by type</h5>
 
                     <IconDiv>
-                        <FilterWrapper onClick={()=>filterProjects('featured')}>
-                            <Icon alt="star" className={`fas fa-star ${iconClasses.featured}`} ></Icon>
+                        <FilterWrapper className={iconClasses.featured} onClick={()=>{
+                            filterProjects('featured')
+                            changeClasses('featured')
+                        }}>
+                            <Icon alt="star" className={`fas fa-star`} ></Icon>
                             <p style={{marginRight: '2%'}}>Featured</p>
                         </FilterWrapper>
-                        <FilterWrapper onClick={()=>filterProjects('solo')}>
-                            <Icon alt="single person" className={`fas fa-user ${iconClasses.solo}`}></Icon>
+                        <FilterWrapper className={iconClasses.solo} onClick={()=>{
+                            filterProjects('solo')
+                            changeClasses('solo')
+                        }}>
+                            <Icon alt="single person" className={`fas fa-user`}></Icon>
                             <p style={{marginRight: '2%'}}>Solo</p>    
                         </FilterWrapper>
-                        <FilterWrapper onClick={()=>filterProjects('team')}>
-                            <Icon style={{fontSize: '2.2rem'}} alt="group of people" className={`fas fa-users ${iconClasses.team}`}></Icon>
+                        <FilterWrapper className={iconClasses.team}  onClick={()=>filterProjects('team')}>
+                            <Icon style={{fontSize: '2.2rem'}} alt="group of people" className={`fas fa-users`}></Icon>
                             <p>Team</p>
                         </FilterWrapper>
-                        <FilterWrapper onClick={()=>filterProjects('all')}>
-                            <Icon style={{fontSize: '2rem'}} alt="person with a plus symbol" className={`fas fa-user-plus ${iconClasses.all}`}></Icon>
+                        <FilterWrapper  className={iconClasses.all} onClick={()=>filterProjects('all')}>
+                            <Icon style={{fontSize: '2rem'}} alt="person with a plus symbol" className={`fas fa-user-plus`}></Icon>
                             <p>All</p>
                         </FilterWrapper>
                     </IconDiv>
@@ -133,9 +150,16 @@ export default function Projects() {
             </ProjectDiv>
             <Button onClick={scrollToTop}>Back to top</Button>
             <Footer footerClass={'footer'}/>
-        </div>
+        </Container>
     )
 }
+
+const Container = styled.div`
+    @media(max-width: 970px){
+        margin-top: 0;
+        padding-top: 15vh;
+    }
+`;
 
 const Settings = styled.p`
     @media(max-width: 960px){

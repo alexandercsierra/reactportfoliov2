@@ -74,6 +74,10 @@ const TopContainer = styled.div`
         align-items: center;
         justify-content: center;
     }
+    @media(max-width: 970px){
+        margin-top: 0;
+        padding-top: 15vh;
+    }
 
 `;
 
