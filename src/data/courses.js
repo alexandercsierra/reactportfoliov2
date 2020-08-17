@@ -23,7 +23,7 @@ export default [
     title: "Typescript: The Complete Developer's Guide [2020]",
     img: 'https://img-a.udemycdn.com/course/240x135/2337318_abfd_4.jpg',
     desc: 'Udemy course',
-    progress: 1,
+    progress: 9,
     status: 'actively working on',
   },
   {
