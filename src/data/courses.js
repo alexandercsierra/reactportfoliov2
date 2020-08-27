@@ -15,7 +15,7 @@ export default [
     title: 'The Coding Interview Bootcamp: Alogrithms + Data Structures',
     img: 'https://img-a.udemycdn.com/course/240x135/1409142_1879_8.jpg',
     desc: 'Udemy course',
-    progress: 41,
+    progress: 62,
     status: 'actively working on',
   },
   {
