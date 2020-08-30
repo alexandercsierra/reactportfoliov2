@@ -33,7 +33,7 @@ const Learning = () => {
     }
 
     useEffect(()=>{
-        axios.get(`${process.env.REACT_APP_BE}/api/courses`)
+        axios.get(`https://acsportfoliobackend.herokuapp.com/api/courses`)
             .then(res=>{
                 setList(res.data)
                 setCourses(res.data)
