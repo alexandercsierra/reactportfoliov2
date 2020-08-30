@@ -17,7 +17,7 @@ const AdminCourses = () => {
     })
 
     useEffect(()=>{
-        axios.get(`${process.env.REACT_APP_BE}/api/courses`)
+        axios.get(`https://acsportfoliobackend.herokuapp.com/api/courses`)
             .then(res=>setCourses(res.data.reverse()))
             .catch(err=>console.log(err))
     },[refreshCourses])
@@ -32,7 +32,7 @@ const AdminCourses = () => {
     }
 
     const deleteCourse = (id) => {
-        axiosWithAuth().delete(`${process.env.REACT_APP_BE}/api/courses/${id}`)
+        axiosWithAuth().delete(`/api/courses/${id}`)
             .then(res=>{
                 setRefreshCourses(!refreshCourses)
             })

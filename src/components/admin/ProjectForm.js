@@ -38,7 +38,7 @@ const ProjectForm = ({isEditing, setIsEditing, projectToEdit, refreshProjects, s
         e.preventDefault()
         // console.log('project', project)
         if(!isEditing){
-            axiosWithAuth().post(`${process.env.REACT_APP_BE}/api/projects`, project)
+            axiosWithAuth().post(`/api/projects`, project)
             .then(res=>{
                 console.log(res)
                 setProject(initialProject)
@@ -46,7 +46,7 @@ const ProjectForm = ({isEditing, setIsEditing, projectToEdit, refreshProjects, s
             })
             .catch(err=>console.log(err))
         } else{
-            axiosWithAuth().put(`${process.env.REACT_APP_BE}/api/projects/${projectToEdit.id}`, project)
+            axiosWithAuth().put(`/api/projects/${projectToEdit.id}`, project)
             .then(res=>{
                 console.log(res)
                 setProject(initialProject)

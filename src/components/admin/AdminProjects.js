@@ -21,7 +21,7 @@ const AdminProjects = () => {
     })
 
     useEffect(()=>{
-        axios.get(`${process.env.REACT_APP_BE}/api/projects`)
+        axios.get(`https://acsportfoliobackend.herokuapp.com/api/projects`)
             .then(res=>setProjects(res.data.reverse()))
             .catch(err=>console.log(err))
     },[refreshProjects])
@@ -36,7 +36,7 @@ const AdminProjects = () => {
     }
 
     const deleteProject = (id) => {
-        axiosWithAuth().delete(`${process.env.REACT_APP_BE}/api/projects/${id}`)
+        axiosWithAuth().delete(`/api/projects/${id}`)
             .then(res=>{
                 setRefreshProjects(!refreshProjects)
             })

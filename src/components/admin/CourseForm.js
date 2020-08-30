@@ -34,7 +34,7 @@ const CourseForm = ({isEditing, setIsEditing, courseToEdit, refreshCourses, setR
         e.preventDefault()
         if(!isEditing){
             console.log('course', course)
-            axiosWithAuth().post(`${process.env.REACT_APP_BE}/api/courses`, course)
+            axiosWithAuth().post(`/api/courses`, course)
                 .then(res=>{
                     console.log(res)
                     setCourse(initialCourse)
@@ -43,7 +43,7 @@ const CourseForm = ({isEditing, setIsEditing, courseToEdit, refreshCourses, setR
                 .catch(err=>console.log(err))
 
         } else {
-            axiosWithAuth().put(`${process.env.REACT_APP_BE}/api/courses/${courseToEdit.id}`, course)
+            axiosWithAuth().put(`/api/courses/${courseToEdit.id}`, course)
             .then(res=>{
                 console.log(res)
                 setCourse(initialCourse)
