@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import {axiosWithAuth} from '../../utils/axiosWithAuth'
 
+//handles editing and adding new courses
 const CourseForm = ({isEditing, setIsEditing, courseToEdit, refreshCourses, setRefreshCourses}) => {
 
     const initialCourse = {
