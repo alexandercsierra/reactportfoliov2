@@ -13,6 +13,7 @@ import sleuth from '../imgs/sleuth.png'
 import ac from '../imgs/animalcrossing.png'
 import gameoflife from '../imgs/gameoflife.png'
 import extrapickles from '../imgs/extrapickles.png'
+import storysquad from '../imgs/storysquad.png'
 
 
 let obj = [
@@ -194,16 +195,20 @@ let obj = [
         url: "https://oerbookr2019.netlify.com/",
         solo: false,
         featured: false
+    },
+    {
+        id: 14,
+        letter: "S",
+        title: "Story Squad FDSC",
+        image: storysquad,
+        alt: "children's drawing of a boy with a crown and an orange dragon",
+        desc: "A project to aid that gives young students an engaging, educational creative outlet during a pandemic. I contributed as a lead full stack developer in close collaboration with non-technical stakeholder. I also designed and implemented user dashboard with real time updates",
+        repo: "https://github.com/ss-mvp",
+        url: "https://contest.storysquad.app",
+        solo: false,
+        featured: false
     }
-    // rps: {
-    //     letter: "R",
-    //     title: "Rock Paper Scissors",
-    //     image: rps,
-    //     alt: "screenshot with two men playing rock paper scissors with buttons below",
-    //     desc: "A simple rock, paper, scissors game built using HTML, CSS, and vanilla JavaScript",
-    //     repo: "https://github.com/alexandercsierra/rpsgame",
-    //     url: "https://alexandercsierra.github.io/rockpaperscissors/rpsgame.html"
-    // }
+
     
 
 ]

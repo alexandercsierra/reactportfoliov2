@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import ProgressBar from './ProgressBar'
 import styled from 'styled-components'
-import courses from '../data/courses'
+// import courses from '../data/courses'
+import axios from 'axios'
 
 const Learning = () => {
     const btnDefaults = {
@@ -13,7 +14,8 @@ const Learning = () => {
     const [showSettings, setShowSettings] = useState(false)
     const [buttonColors, setButtonColors] = useState()
     const [classes, setClasses] = useState({...btnDefaults, default: 'btnActive'})
-    const [list, setList] = useState(courses)
+    const [list, setList] = useState([])
+    const [courses, setCourses] = useState([])
     const mostProgress = [...courses].sort((a,b)=> a.progress < b.progress ? 1 : -1)
     const leastProgress = [...courses].sort((a,b)=> a.progress < b.progress ? -1 : 1)
     const status = [...courses].sort((a,b)=> a.status < b.status ? -1 : 1)
@@ -29,6 +31,16 @@ const Learning = () => {
             setClasses(newClasses)
         }
     }
+
+    useEffect(()=>{
+        axios.get(`${process.env.REACT_APP_BE}/api/courses`)
+            .then(res=>{
+                setList(res.data)
+                setCourses(res.data)
+            })
+            .catch(err=>console.log(err))
+
+    },[])
 
     return(
         <Container>
