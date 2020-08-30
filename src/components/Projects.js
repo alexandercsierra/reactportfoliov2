@@ -31,7 +31,7 @@ export default function Projects() {
     const [iconClasses, setIconClasses] = useState({...iconDefaults, featured: 'activeIcon'})
     
     useEffect(()=>{
-        axios.get('http://localhost:5001/api/projects/')
+        axios.get(`${process.env.REACT_APP_BE}/api/projects/`)
             .then(res=>{
                 let featured = res.data.filter(proj=>proj.featured === true)
                 setProjects(featured)
