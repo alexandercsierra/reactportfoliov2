@@ -10,7 +10,9 @@ import Carousel from './components/Carousel'
 import MoreInfo from './components/MoreInfo'
 import Learning from './components/Learning'
 import AdminLogin from './components/AdminLogin'
-import AdminDash from './components/AdminDash';
+import AdminDash from './components/admin/AdminDash';
+import AdminProjects from './components/admin/AdminProjects'
+import AdminCourses from './components/admin/AdminCourses'
 import PrivateRoute from './utils/ProtectedRoute'
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
         <Route path='/contact'><Contact/></Route>
         <Route path='/admin'><AdminLogin/></Route>
         <PrivateRoute path='/admindash' component={AdminDash}/>
+        <PrivateRoute path='/adminprojects' component={AdminProjects}/>
+        <PrivateRoute path='/admincourses' component={AdminCourses}/>
         
     
         

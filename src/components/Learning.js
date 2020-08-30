@@ -33,7 +33,7 @@ const Learning = () => {
     }
 
     useEffect(()=>{
-        axios.get('http://localhost:5001/api/courses')
+        axios.get(`${process.env.REACT_APP_BE}/api/courses`)
             .then(res=>{
                 setList(res.data)
                 setCourses(res.data)
