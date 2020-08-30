@@ -64,6 +64,13 @@ let moreInfo = [
                 desc: 'Authentication through Okta means that your username and profile image can be edited at any time, and will update on your friends dashboards too.'
             }
         ]
+    },
+    {
+        id: 14,
+        letter: "S",
+        title: "Story Squad FDSC",
+        subtitle: "Step by step user flow",
+        steps: []
     }
 ]
 

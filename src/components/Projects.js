@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import Footer from './Footer'
 import styled from 'styled-components'
-import {projectlist} from '../data/projectlist'
+// import {projectlist} from '../data/projectlist'
 import Project from './Project'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {faUser, faUsers, faUserPlus, faCog, faStar} from '@fortawesome/free-solid-svg-icons'
 import { dom } from '@fortawesome/fontawesome-svg-core'
+import axios from 'axios'
 
 dom.watch()
 
@@ -20,13 +21,24 @@ export default function Projects() {
         all: 'inactiveIcon'
     }
 
-    const featured = projectlist.filter(proj=>proj.featured === true)
-    const [projects, setProjects] = useState(featured);
+    
+
+    const [projects, setProjects] = useState([]);
+    const [projectlist, setProjectlist] = useState([])
     const [showSettings, setShowSettings] = useState(false)
     const [currentFilter, setCurrentFilter] = useState('featured')
 
     const [iconClasses, setIconClasses] = useState({...iconDefaults, featured: 'activeIcon'})
     
+    useEffect(()=>{
+        axios.get(`${process.env.REACT_APP_BE}/api/projects/`)
+            .then(res=>{
+                let featured = res.data.filter(proj=>proj.featured === true)
+                setProjects(featured)
+                setProjectlist(res.data)
+            })
+            .catch(err=>console.log(err))
+    },[])
 
     const changeClasses = (btn)=>{
         if(iconClasses[btn] === "inactiveIcon"){
