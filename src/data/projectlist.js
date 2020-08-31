@@ -19,6 +19,18 @@ import storysquad from '../imgs/storysquad.png'
 let obj = [
     {
         id: 0,
+        letter: "S",
+        title: "Story Squad FDSC",
+        image: storysquad,
+        alt: "children's drawing of a boy with a crown and an orange dragon",
+        desc: "A project to aid that gives young students an engaging, educational creative outlet during a pandemic. I contributed as a lead full stack developer in close collaboration with non-technical stakeholder, hosting daily standups and onboarding new team members in addition to writing code. I also designed and implemented user dashboard with real time updates. This app is built in ReactJS, Redux, NodeJS, Express, Python, PostgreSQL, and deployed with AWS.",
+        repo: "https://github.com/ss-mvp",
+        url: "https://contest.storysquad.app",
+        solo: false,
+        featured: true
+    },
+    {
+        id: 0,
         letter: "E",
         title: "Extra Pickles",
         image: extrapickles,
@@ -195,19 +207,8 @@ let obj = [
         url: "https://oerbookr2019.netlify.com/",
         solo: false,
         featured: false
-    },
-    {
-        id: 14,
-        letter: "S",
-        title: "Story Squad FDSC",
-        image: storysquad,
-        alt: "children's drawing of a boy with a crown and an orange dragon",
-        desc: "A project to aid that gives young students an engaging, educational creative outlet during a pandemic. I contributed as a lead full stack developer in close collaboration with non-technical stakeholder. I also designed and implemented user dashboard with real time updates",
-        repo: "https://github.com/ss-mvp",
-        url: "https://contest.storysquad.app",
-        solo: false,
-        featured: false
     }
+    
 
     
 
