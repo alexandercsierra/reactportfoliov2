@@ -88,7 +88,7 @@ let obj = [
         repo: "https://github.com/alexandercsierra/sleuthv5",
         url: "https://sleuth.now.sh/",
         solo: true,
-        featured: true
+        featured: false
     },
     {
         id: 5,
